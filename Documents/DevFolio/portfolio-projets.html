@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details - DevFolio Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/YA.png" alt="">
+        <h1 class="sitename">Portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">Accueil<br></a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="index.html#compétences">Competence</a></li>
+          <li><a href="index.html#formation">Formation</a></li>
+          <li><a href="index.html#entreprise">Entreprise</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li class="dropdown">
+            <a href="portfolio-projets.html"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-details.html#portfolio-details">Chat Interactif</a></li>
+              <li><a href="portfolio-details.html#portfolio-details-2">Mini Jeu</a></li>
+              <li><a href="portfolio-details.html#portfolio-details-3">ENT</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Projets</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li class="current">Projets</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Portfolio Projets Étudiant BTS SLAM -->
+  <section class="section" id="projets-bts-slam">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-5">
+
+        <!-- Projet 1 -->
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-chat-dots-fill fs-2 me-2"></i>
+                <h5 class="card-title mb-0">Chat Interactif sur Serveur Dédié</h5>
+              </div>
+              <p class="card-text">
+                Application de chat en temps réel développée en Java (architecture MVC) avec interface graphique Swing. Permet d’échanger des messages en public ou en privé, de gérer les états de présence (en ligne, absent, ne pas déranger, invisible) et de se connecter via plusieurs modes (inscription, connexion rapide, invité). Hébergée sur un serveur dédié.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">Java</span>
+                <span class="badge bg-secondary">MVC</span>
+                <span class="badge bg-info text-dark">Swing</span>
+                <span class="badge bg-dark">Socket</span>
+                <span class="badge bg-success">Serveur dédié</span>
+              </div>
+              <a href="https://github.com/YnsHlf212/classcord-client" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-details.html#portfolio-details" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 2 -->
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-controller fs-2 me-2"></i>
+                <h5 class="card-title mb-0">Mini Jeu de Bataille sur Arène</h5>
+              </div>
+              <p class="card-text">
+                Jeu web multijoueur où chaque joueur contrôle un personnage sur une arène et affronte d'autres joueurs en temps réel. Réalisé en JavaScript (Node.js, Express, Socket.io) avec une interface graphique dynamique et un système de classement.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">JavaScript</span>
+                <span class="badge bg-secondary">Node.js</span>
+                <span class="badge bg-info text-dark">Express</span>
+                <span class="badge bg-warning text-dark">Socket.io</span>
+              </div>
+              <a href="https://github.com/YnsHlf212" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-details.html" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 3 -->
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-person-lines-fill fs-2 me-2"></i>
+                <h5 class="card-title mb-0">ENT Prof/Élève – Gestion de Notes</h5>
+              </div>
+              <p class="card-text">
+                Application de gestion scolaire développée en <strong>Java</strong> avec base de données interne, permettant aux élèves de consulter leurs notes, moyennes et commentaires après connexion sécurisée (nom d’utilisateur et mot de passe). Les professeurs disposent d’une interface dédiée pour ajouter des matières, saisir des notes et commentaires, et consulter le détail des résultats de chaque élève.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">Java</span>
+                <span class="badge bg-secondary">Base de données</span>
+                <span class="badge bg-info text-dark">Swing</span>
+                <span class="badge bg-dark">Gestion scolaire</span>
+              </div>
+              <a href="https://github.com/YnsHlf212/ENT-/tree/main/eclipse-workspace/TPFinAnnee" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-details.html#portfolio-details-3" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="my-5">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h3 class="fw-semibold mb-3 text-center"><i class="bi bi-table me-2"></i> Tableau de synthèse</h3>
+            <div class="text-center mb-4">
+
+              <style type="text/css">
+                .tg  {border-collapse:collapse;border-spacing:0; margin:auto;}
+                .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                  overflow:hidden;padding:10px 5px;word-break:normal; background:#fff;}
+                .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal; background:#f6f6f6;}
+                .tg .tg-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
+                .tg .tg-uzvj{border-color:inherit;font-weight:bold;text-align:center;vertical-align:middle}
+                .tg .tg-yla0{font-weight:bold;text-align:left;vertical-align:middle}
+                .tg .tg-xxp7{font-style:italic;font-weight:bold;text-align:center;vertical-align:middle}
+                .tg .tg-nrix{text-align:center;vertical-align:middle}
+              </style>
+              <div class="table-responsive mb-3">
+                <!-- Remplacez ce tableau par le code HTML exporté depuis Excel ou Google Sheets -->
+                <table class="tg">
+                  <thead>
+                    <tr>
+                      <th class="tg-uzvj" colspan="6">BTS SERVICES INFORMATIQUES AUX ORGANISATIONS</th>
+                      <th class="tg-wa1i" colspan="2">SESSION 2025</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="tg-wa1i" colspan="8">Tableau de synthèse des réalisations professionnelles </td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yla0" colspan="5">NOM et prénom : YANIS ADIDI</td>
+                      <td class="tg-yla0" colspan="3">N° candidat : </td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yla0" colspan="5">Centre de formation : IRIS BTS SIO </td>
+                      <td class="tg-yla0">Option :</td>
+                      <td class="tg-wa1i">▢ SISR</td>
+                      <td class="tg-wa1i">X SLAM</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yla0" colspan="8">Adresse URL du portfolio :</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-xxp7" rowspan="2">Compétences mises en œuvre<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> Réalisations professionnelles<br> (intitulé et liste des documents et productions associés)</td>
+                      <td class="tg-wa1i" rowspan="2">Période (sous la forme du JJ/MM/AA au JJ/MM/AA)</td>
+                      <td class="tg-wa1i">Gérer le patrimoine informatique</td>
+                      <td class="tg-wa1i">Répondre aux incidents et aux demandes d’assistance et d’évolution</td>
+                      <td class="tg-wa1i">Développer la présence en ligne de l’organisation</td>
+                      <td class="tg-wa1i">Travailler en mode projet</td>
+                      <td class="tg-wa1i">Mettre à disposition des utilisateurs un service informatique</td>
+                      <td class="tg-wa1i">Organiser son développement professionnel</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-nrix">▸Recenser et identifier les ressources numériques <br> ▸Exploiter des référentiels, normes et standards adoptés par le prestataire informatique<br> ▸Mettre en place et vérifier les niveaux d’habilitation associés à un service<br> ▸Vérifier les conditions de la continuité d’un service informatique<br> ▸Gérer des sauvegardes<br> ▸Vérifier le respect des règles d’utilisation des ressources numériques</td>
+                      <td class="tg-nrix">▸Collecter, suivre et orienter des demandes <br> ▸Traiter des demandes concernant les services réseau et système, applicatifs<br> ▸Traiter des demandes concernant les applications</td>
+                      <td class="tg-nrix">▸Participer à la valorisation de l’image de l’organisation sur les médias numériques en tenant compte du cadre juridique et des enjeux économiques<br> ▸Référencer les services en ligne de l’organisation et mesurer leur visibilité.<br> ▸Participer à l’évolution d’un site Web exploitant les données de l’organisation.</td>
+                      <td class="tg-nrix">▸Analyser les objectifs et les modalités d’organisation d’un projet<br> ▸Planifier les activités<br> ▸Évaluer les indicateurs de suivi d’un projet et analyser les écarts</td>
+                      <td class="tg-nrix">▸Réaliser les tests d’intégration et d’acceptation d’un service<br> ▸Déployer un service<br> ▸Accompagner les utilisateurs dans la mise en place d’un service</td>
+                      <td class="tg-nrix">▸Mettre en place son environnement d’apprentissage personnel<br> ▸Mettre en œuvre des outils et stratégies de veille informationnelle<br> ▸Gérer son identité professionnelle<br> ▸Développer son projet professionnel</td>
+                    </tr>
+                    <tr>
+                      <td class="tg-wa1i" colspan="8">Réalisation en cours de formation<br> <br> </td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yla0">Chat Java </td>
+                      <td class="tg-yla0">16-21/05/25</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix"></td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix"></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yla0">Mini Jeu - Urban Marginal</td>
+                      <td class="tg-yla0">12/24-04/25</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix"></td>
+                      <td class="tg-nrix"></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-yla0">ENT</td>
+                      <td class="tg-yla0">---</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix"></td>
+                      <td class="tg-nrix">X</td>
+                      <td class="tg-nrix">X</td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+              <div class="mb-2 text-center">
+                <a href="table/TableauDeSynthèse.xlsx" class="btn btn-outline-success mt-2" download><i class="bi bi-file-earmark-excel"></i> Télécharger le tableau Excel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+
+
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">YANIS ADIDI</strong> <span>Tout les droit me sont réservé</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/YnsHlf212" target="_blank"><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
