@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mon Portfolio</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons --> 
+  <link href="assets/img/IconCode.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+       
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/YA.png" alt="">
+        <h1 class="sitename">Portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Accueil<br></a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#compétences">Competence</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#entreprise">Entreprise</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li class="dropdown">
+            <a href="portfolio-projets.html"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-details.html#portfolio-details">Chat Interactif</a></li>
+              <li><a href="portfolio-details.html#portfolio-details-2">Mini Jeu</a></li>
+              <li><a href="portfolio-details.html#portfolio-details-3">ENT</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+  <!-- Hero Section -->
+
+    <!-- Acceuil -->
+<section id="hero" class="hero section dark-background" style="position: relative; overflow: hidden;">
+
+  <!-- Vidéo en arrière-plan -->
+  <video autoplay muted loop playsinline 
+         src="/assets/img/17076-278405108.mp4" 
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;"
+         data-aos="fade-in">
+  </video>
+
+  <!-- Overlay sombre -->
+  <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+
+  <!-- Contenu au-dessus -->
+  <div class="container d-flex flex-column align-items-center justify-content-center text-center"
+       style="position: relative; z-index: 2; color: white;"
+       data-aos="fade-up" data-aos-delay="100">
+    <h2>Yanis ADIDI</h2>
+    <p><span class="typed" data-typed-items="Developpeur, Technicien"></span></p>
+    <!-- Boutons centrés -->
+    <div class="d-flex gap-3 justify-content-center mt-4">
+      <a href="portfolio-projets.html" class="btn btn-primary" style="display: flex; align-items: center; gap: 8px; font-weight: 500;">
+        <i class="bi bi-eye"></i> Voir mes projets
+      </a>
+      <a href="assets/CV-Yanis-ADIDI.pdf" class="btn btn-outline-light" style="display: flex; align-items: center; gap: 8px; font-weight: 500;" download>
+        <i class="bi bi-download"></i> Télécharger mon CV
+      </a>
+    </div>
+  </div>
+
+</section>
+<!-- /Hero Section -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <!-- Section Title -->  
+      <div class="section-title" data-aos="fade-up">
+        <h2>A propos de moi</h2>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100" style="border-radius: 25px; background: #fff; box-shadow: 0 4px 24px rgba(0,0,0,0.07); padding: 32px;">
+
+        <div class="row gy-4">
+          <div class="col-md-6">
+
+            <div class="row justify-content-between gy-4">
+              <div class="col-lg-7 about-info">
+                <p><strong>Nom :</strong> <span>Yanis ADIDI</span></p>
+                <p><strong>Profile: </strong> <span>Developpeur Web et Application intermédiaire</span></p>
+                <p><strong>Email: </strong> <span>yanis.adidi@mediaschool.me</span></p>
+              </div>
+            </div>
+
+            <div class="skills-content skills-animation">
+
+              <h5>Compétences</h5>
+
+              <div class="progress">
+                <span class="skill"><span>Developpement Web/Application</span> <i class="val">77%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>Base de Données</span> <i class="val">63%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>Gestion de Projet</span> <i class="val">60%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+              <div class="progress">
+                <span class="skill"><span>Sécurité</span> <i class="val">58%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div><!-- End Skills Item -->
+
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="about-me">
+              <p>
+                Actuellement étudiant en <strong> BTS SIO </strong>, spécialité SLAM (Solutions Logicielles et Applications Métiers),
+                je poursuis ma formation en alternance au sein du groupe Orange.
+              </p>
+              <p>
+                Passionné par l’informatique et le développement depuis mon plus jeune âge, 
+                j’ai à cœur de transformer cette passion en expertise professionnelle. Cette alternance m’a permis de <strong> consolider mes compétences techniques </strong> et 
+                de <strong> découvrir le fonctionnement d’une grande entreprise </strong>.
+              </p>
+              <p>
+                À l’issue de mon BTS, je souhaite intégrer une <strong> école d’ingénieur </strong> en informatique afin de poursuivre mon parcours académique, 
+                approfondir mes connaissances en développement logiciel, et me spécialiser dans des domaines innovants tels que le <strong> développement web mobile ou les architectures logicielles</strong>, 
+                .
+              </p>
+              <p> 
+                <strong> Mon objectif est clair : </strong> évoluer dans un environnement dynamique où je pourrai mettre mes compétences au service de projets ambitieux tout en continuant à apprendre et à me perfectionner.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline scolaire -->
+        <div class="timeline-education mt-5">
+          <h4 class="text-center mb-4"><i class="bi bi-mortarboard"></i> Mon Parcours Scolaire</h4>
+          <div class="timeline-vertical">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2022</span>
+                <h5>Baccalauréat Général</h5>
+                <p>Option Mathématiques & NSI<br><em>Lycée du Parc Impérial</em></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2023 - 2024</span>
+                <h5>BUT GEII</h5>
+                <p>Génie Électrique et Informatique Industrielle<br><em>IUT Nice-Côte D'azur</em></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2024 - 2025</span>
+                <h5>BTS SIO (SLAM)</h5>
+                <p>Solutions Logicielles et Applications Métiers<br><em>IRIS Mediaschool</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Compétences Section -->
+    <section id="compétences" class="compétences section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Compétences Acquises</h2>
+        <p>Toutes les compétences que j’ai pu acquérir ou renforcer au cours de mes deux années de BTS.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="compétences-item  position-relative">
+              <div class="icon">
+                <i class="bi bi-filetype-java"></i><!-- Java -->
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Java</h3>
+              </a>
+              <p>Maîtrise du langage Java pour développer des applications orientées objet, avec un focus sur la qualité du code et la modularité.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-filetype-html"></i> <!-- HTML -->
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>HTML</h3>
+              </a>
+              <p>Structure claire et sémantique des pages web pour assurer accessibilité et référencement.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-filetype-js"></i>  <!-- Java Script -->
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Java Script</h3>
+              </a>
+              <p>Création d’interactions dynamiques et réactives pour améliorer l’expérience utilisateur.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-filetype-py"></i> <!-- Python -->
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>Python</h3>
+              </a>
+              <p>Utilisation de Python pour le scripting, l’automatisation et le développement d’applications simples.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-filetype-sql"></i> <!-- SQL -->
+              </div>
+              <a href="#" class="stretched-link">
+                <h3>SQL</h3>
+              </a>
+              <p>Gestion et interrogation efficace de bases de données relationnelles pour extraire et manipuler les données.</p>
+              <a href="#" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Compétences Section -->
+
+    <section id="formation" class="formation section accent-background">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>Formation</h2>
+      <p>Découvrez mon parcours en BTS SIO (Services Informatiques aux Organisations)</p>
+    </div>
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-6 d-flex flex-column align-items-center" data-aos="fade-right" data-aos-delay="100">
+        <img src="assets/img/bts-sio.png" alt="BTS SIO" class="img-fluid rounded shadow mb-4" style="max-width: 80%; display: block;">
+        
+      </div>
+      <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+        <h3>BTS SIO - Services Informatiques aux Organisations</h3>
+        <p>
+          Le <strong>BTS SIO</strong> (Services Informatiques aux Organisations) est une formation professionnalisante de deux ans qui prépare aux métiers de l’informatique. 
+          Elle propose deux spécialités : <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers) et <strong>SISR</strong> (Solutions d’Infrastructure, Systèmes et Réseaux).
+        </p>
+        <ul>
+          <li><strong>SLAM</strong> : Développement d’applications web, mobiles et logicielles, gestion de bases de données, analyse des besoins clients.</li>
+          <li><strong>SISR</strong> : Administration réseaux, sécurité, gestion de parc informatique, virtualisation et cloud.</li>
+        </ul>
+        <p>
+          Grâce à cette formation, j’ai acquis des compétences solides en programmation, gestion de projet, sécurité informatique et travail en équipe. 
+          Le BTS SIO m’a permis de réaliser des projets concrets et de me préparer efficacement au monde professionnel ou à la poursuite d’études en école d’ingénieur.
+        </p>
+        <hr>
+        <h4>IRIS Mediaschool</h4>
+        <p>
+          J’effectue mon BTS SIO au sein de <strong>IRIS Mediaschool</strong>, une école reconnue pour la qualité de son enseignement dans le domaine du numérique et de l’informatique à Nice.
+          IRIS Mediaschool propose un environnement moderne et des intervenants professionnels.
+        </p>
+        <p>
+          L’école favorise l’apprentissage par la pratique grâce à de nombreux projets, des ateliers, et des périodes en entreprise. 
+          Elle met l’accent sur l’innovation, la créativité et l’ouverture vers les métiers du digital, ce qui me permet de développer des compétences techniques et humaines essentielles pour réussir dans le secteur informatique.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Entreprise Section -->
+    <section id="entreprise" class="entreprise section"> 
+
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Mon alternance chez <span style="color: #ff7900;">Orange</span></h2>
+        <p><strong>Orange</strong> est l’un des principaux opérateurs de télécommunications dans le monde, présent dans plus de 
+        <strong>25 pays</strong> et comptant plus de <strong>290 millions de clients</strong> à travers le globe. L’entreprise emploie 
+        plus de <strong>130 000 collaborateurs</strong> et joue un rôle majeur dans le développement des technologies numériques en Europe, en Afrique et au Moyen-Orient.</p>
+      
+
+        <section id="experience-orange" class="experience-section" style="padding: 60px 0; ">
+        <div class="container text-center" data-aos="fade-up">
+          <!-- Mon rôle -->
+          <p >
+          Depuis <strong>debut septembre 2024</strong>, j’ai la chance d’effectuer mon alternance chez Orange, au sein d’une équipe technique dédiée aux solutions internes.
+          Mon rôle consiste principalement à <strong>développer</strong>, <strong>intervenir</strong> et <strong>maintenir</strong> des applications métiers ou directement le materiel
+          Orange tout en respectant les exigences de qualité, de sécurité et de performance.
+          Cette expérience me permet de progresser dans un environnement professionnel exigeant, et de consolider mes compétences , <strong>travail en équipe</strong> et 
+          <strong>gestion de projet </strong>. </p>
+        </div><!-- End Section Title -->
+
+      </div>
+    </section>
+
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section accent-background">
+
+      <img src="assets/img/OraneBureau1.jpg" alt="" data-aos="fade-in">
+
+      <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="291000000" data-purecounter-duration="0" class="purecounter">291000000 </span>
+              <p>Clients</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="26" data-purecounter-duration="0" class="purecounter">26</span>
+              <p>Pays</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="130000" data-purecounter-duration="0" class="purecounter">130000</span>
+              <p>Collaborateurs </p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item text-center w-100 h-100">
+              <span data-purecounter-start="0" data-purecounter-end="43" data-purecounter-duration="0" class="purecounter">43</span>
+              <p>Chiffre d’affaires annuel (Milliard)</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Section -->
+
+    </section><!-- /Entreprise Section -->
+
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Si vous avez la moindre question, n'hésitez pas à nous contacter par l'un des moyens suivants. </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Adresse</h3>
+                  <p> 33 Avenue Notre Dame 6ème étage, 06000 Nice</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Tél (Médiaschool)</h3>
+                  <p>+33 4 93 91 42 96</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>yanis.adidi@mediaschool.me</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
+            
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Votre Nom" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Votre Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Sujet" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Chargement...</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Votre message a bien été envoyé ! Merci.</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">YANIS ADIDI</strong> <span>Tout les droit me sont réservé</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/YnsHlf212" target="_blank"><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>
