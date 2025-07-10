@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "Simpsbook",
+			"path": "../../../../../Documents/Vs code/Simpsbook"
+		},
+		{
+			"name": "img",
+			"path": "../../../../../Downloads/img/img"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Simpsbook"
+	}
+}
