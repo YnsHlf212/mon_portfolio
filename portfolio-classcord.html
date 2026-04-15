@@ -1,0 +1,730 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>ClassCord - Portfolio Yanis ADIDI</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/IconCode.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+
+  <style>
+        /* Style Clean Minimal — Flat & Typographic */
+    .project-header {
+      background: #ffffff;
+      padding: 80px 0 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .project-header h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      letter-spacing: -1px;
+    }
+
+    .project-header h1 i { display: none; }
+
+    .project-header .lead {
+      font-size: 1.15rem;
+      color: #888;
+      font-weight: 400;
+    }
+
+    .project-header .lead::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #bf9b30;
+      margin-top: 20px;
+    }
+
+    .project-sidebar {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .project-sidebar h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .project-info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .project-info-label {
+      font-weight: 500;
+      color: #aaa;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .project-info-value {
+      font-size: 0.95rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tech-badge {
+      background: transparent;
+      border: none;
+      color: #666;
+      padding: 4px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .tech-badge::after { content: ","; color: #ccc; }
+    .tech-badge:last-child::after { content: ""; }
+
+    .project-content {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 30px 40px 40px;
+      margin-bottom: 24px;
+    }
+
+    .project-content h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+      position: relative;
+      padding-left: 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #bf9b30;
+    }
+
+    .project-content h3::before { display: none; }
+
+    .project-content p {
+      color: #555;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      padding: 10px 0 10px 24px;
+      position: relative;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #444;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .feature-list li:last-child { border-bottom: none; }
+
+    .feature-list li::before {
+      content: "\2014";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: #bf9b30;
+      font-weight: 700;
+      width: auto;
+      height: auto;
+      background: none;
+      border-radius: 0;
+      display: inline;
+      font-size: 1rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .gallery-item {
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover { border-color: #bf9b30; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .metric-card {
+      background: #fff;
+      border-top: 3px solid #bf9b30;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .team-member {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .team-member i { color: #bf9b30; }
+
+    .challenge-card {
+      background: #fff;
+      border-left: 3px solid #e5c36b;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .challenge-card h5 {
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .challenge-card p {
+      color: #666;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .result-card {
+      background: #fff;
+      border-left: 3px solid #6bc98f;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .result-card h5 {
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .result-card p {
+      color: #666;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .project-nav {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a1a1a;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .project-nav a:hover { color: #bf9b30; }
+
+    .tech-detail-box {
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+
+    .tech-detail-box h6 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tech-detail-box ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 991px) {
+      .project-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 24px;
+      }
+
+      .project-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/YA.png" alt="">
+        <h1 class="sitename">Portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Accueil</a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="index.html#compétences">Compétences</a></li>
+          <li><a href="index.html#formation">Formation</a></li>
+          <li><a href="index.html#entreprise">Entreprise</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li class="dropdown">
+            <a href="portfolio-projets.html" class="active"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-classcord.html">ClassCord</a></li>
+              <li><a href="portfolio-urban-marginal.html">Urban Marginal</a></li>
+              <li><a href="portfolio-ent.html">ENT</a></li>
+              <li><a href="portfolio-mediastock.html">MediaStock</a></li>
+              <li><a href="portfolio-obsilock.html">ObsiLock</a></li>
+              <li><a href="portfolio-main-stock.html">Main-Stock</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio-projets.html#tableau-synthese">Tableau de synthèse</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+
+  <main class="main">
+
+    <!-- Projet 1: ClassCord -->
+    <section id="portfolio-details" class="py-0">
+      <div class="project-header" data-aos="fade-down">
+        <div class="container">
+          <h1><i class="bi bi-chat-dots-fill me-3"></i>ClassCord - Client de messagerie interopérable</h1>
+          <p class="lead">Client Java Swing pour plateforme de messagerie instantanée en réseau local</p>
+        </div>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-lg-4 mb-4">
+            <div class="project-sidebar">
+              <h4><i class="bi bi-info-circle me-2"></i>Informations du Projet</h4>
+              
+              <div class="project-info-item">
+                <span class="project-info-label">Période</span>
+                <span class="project-info-value">16-21 mai 2025 (5 jours intensifs)</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Type</span>
+                <span class="project-info-value">Projet académique - BTS SIO SLAM</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Public</span>
+                <span class="project-info-value">Étudiants option SLAM</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Équipe</span>
+                <div class="team-members">
+                  <div class="team-member">
+                    <i class="bi bi-person-fill"></i>
+                    <span>Yanis ADIDI (Lead Dev)</span>
+                  </div>
+                  <div class="team-member">
+                    <i class="bi bi-person"></i>
+                    <span>Etudiants SISR</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Rôle</span>
+                <span class="project-info-value">Conception, Développement Full-Stack, Déploiement</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Technologies</span>
+                <div class="tech-stack">
+                  <span class="tech-badge">Java 11+</span>
+                  <span class="tech-badge">Swing</span>
+                  <span class="tech-badge">Socket TCP</span>
+                  <span class="tech-badge">MVC</span>
+                  <span class="tech-badge">JSON</span>
+                  <span class="tech-badge">Maven</span>
+                </div>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Code Source</span>
+                <a href="https://github.com/YnsHlf212/classcord-client" target="_blank" class="btn btn-dark btn-sm w-100 mt-2">
+                  <i class="bi bi-github me-2"></i>Voir sur GitHub
+                </a>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Statut</span>
+                <span class="badge bg-success">✓ Terminé et Déployé</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenu principal -->
+          <div class="col-lg-8">
+            <!-- Vue d'ensemble -->
+            <div class="project-content">
+              <h3>Vue d'ensemble</h3>
+              <p>
+                ClassCord est un client de messagerie instantanée développé en Java Swing, conçu pour permettre aux professeurs 
+                et étudiants de communiquer en temps réel sur le réseau local de l'établissement. Le client se connecte à un serveur 
+                de chat existant via une adresse IP et un port configurables, offrant une interface fluide et réactive.
+              </p>
+              <p>
+                Le projet mobilise les compétences en modélisation, architecture logicielle, programmation réseau et interface graphique, 
+                suivant une méthodologie de projet itérative par étapes. Le serveur est géré par les étudiants SISR et accessible en réseau local.
+              </p>
+
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <div class="metric-value">5</div>
+                  <div class="metric-label">Jours de dev</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value">8</div>
+                  <div class="metric-label">Fonctionnalités</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value">3</div>
+                  <div class="metric-label">Modes connexion</div>
+                </div>
+                <div class="metric-card">
+                  <div class="metric-value">100%</div>
+                  <div class="metric-label">Fonctionnel</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Galerie -->
+            <div class="project-content">
+              <h3>Captures d'écran</h3>
+              <div class="gallery-grid">
+                <div class="gallery-item">
+                  <a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="chat-gallery">
+                    <img src="assets/img/projets/ChatBox.png" alt="Interface principale">
+                  </a>
+                </div>
+                <div class="gallery-item">
+                  <a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="chat-gallery">
+                    <img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion">
+                  </a>
+                </div>
+                <div class="gallery-item">
+                  <a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="chat-gallery">
+                    <img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invité">
+                  </a>
+                </div>
+                <div class="gallery-item">
+                  <a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="chat-gallery">
+                    <img src="assets/img/projets/ChatMsg.png" alt="Messagerie">
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fonctionnalités -->
+            <div class="project-content">
+              <h3>Cahier des Charges Fonctionnel</h3>
+              <ul class="feature-list">
+                <li>Connexion à un serveur distant via IP et port configurables</li>
+                <li>Trois modes de connexion : invité, connexion rapide, compte utilisateur</li>
+                <li>Affichage des messages du canal global en temps réel</li>
+                <li>Envoi de messages publics dans le canal global</li>
+                <li>Affichage de la liste des utilisateurs connectés</li>
+                <li>Envoi et réception de messages privés</li>
+                <li>Gestion des états utilisateurs (disponible, absent, invisible)</li>
+                <li>Interface conviviale et fluide avec Java Swing</li>
+              </ul>
+            </div>
+
+            <!-- Défis techniques -->
+            <div class="project-content">
+              <h3>Cahier des Charges Technique</h3>
+              
+              <div class="challenge-card">
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Programmation Réseau en Java</h5>
+                <p>
+                  Implémentation de communications TCP/IP entre client et serveur avec gestion des sockets 
+                  et des threads réseau séparés pour la réception asynchrone des messages.
+                </p>
+              </div>
+
+              <div class="challenge-card">
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Architecture MVC Sans Framework</h5>
+                <p>
+                  Conception d'une architecture MVC personnalisée implémentée manuellement, séparant clairement 
+                  les responsabilités : Model (logique métier), View (interface Swing), Controller (coordination).
+                </p>
+              </div>
+
+              <div class="challenge-card">
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Interface Graphique Réactive</h5>
+                <p>
+                  Développement d'une interface utilisateur fluide avec Java Swing, gérant les événements 
+                  en temps réel et les mises à jour asynchrones sans bloquer l'interface.
+                </p>
+              </div>
+
+              <div class="challenge-card">
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Sérialisation JSON</h5>
+                <p>
+                  Utilisation de la bibliothèque org.json pour la sérialisation et désérialisation des messages 
+                  et données échangées entre client et serveur en format JSON.
+                </p>
+              </div>
+            </div>
+
+            <!-- Résultats -->
+            <div class="project-content">
+              <h3>Objectif Pédagogique & Résultats</h3>
+              
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Mobilisation de Compétences Clés</h5>
+                <p>
+                  Mise en pratique de la modélisation, architecture logicielle, programmation réseau, 
+                  interface graphique et documentation technique. Maîtrise approfondie de Java Swing 
+                  et des communications TCP/IP en environnement éducatif.
+                </p>
+              </div>
+
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Méthodologie Itérative</h5>
+                <p>
+                  Réalisation d'un projet complet suivant une méthodologie itérative par étapes sur 5 jours, 
+                  avec planification, développement progressif et déploiement fonctionnel. Client capable 
+                  de se connecter à des serveurs en réseau local et d'échanger des messages en temps réel.
+                </p>
+              </div>
+
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Travail en Environnement Éducatif</h5>
+                <p>
+                  Collaboration avec les étudiants SISR pour l'accès au serveur central, et architecture 
+                  permettant la connexion à différents serveurs. Démonstration d'une application 
+                  professionnelle et fonctionnelle prête pour l'utilisation en établissement.
+                </p>
+              </div>
+            </div>
+
+            <!-- Technologies détaillées -->
+            <div class="project-content">
+              <h3>Stack Technique Détaillée</h3>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="p-3 border rounded">
+                    <h6 class="fw-bold mb-2"><i class="bi bi-code-square me-2"></i>Langage & Plateforme</h6>
+                    <ul class="mb-0" style="padding-left: 20px;">
+                      <li>Java 11 ou plus</li>
+                      <li>Swing pour interface graphique</li>
+                      <li>Sockets TCP (pas HTTP)</li>
+                      <li>Threads réseau séparés</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded">
+                    <h6 class="fw-bold mb-2"><i class="bi bi-palette me-2"></i>Architecture Logicielle</h6>
+                    <ul class="mb-0" style="padding-left: 20px;">
+                      <li>Architecture MVC (implémentation manuelle)</li>
+                      <li>Model : logique métier</li>
+                      <li>View : interface Swing</li>
+                      <li>Controller : coordination</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded">
+                    <h6 class="fw-bold mb-2"><i class="bi bi-server me-2"></i>Dépendances</h6>
+                    <ul class="mb-0" style="padding-left: 20px;">
+                      <li>org.json:(20231013)</li>
+                      <li>Sérialisation JSON</li>
+                      <li>Communication client-serveur</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="p-3 border rounded">
+                    <h6 class="fw-bold mb-2"><i class="bi bi-git me-2"></i>Outils de Développement</h6>
+                    <ul class="mb-0" style="padding-left: 20px;">
+                      <li>VSCode avec extension Java</li>
+                      <li>Maven pour gestion des dépendances</li>
+                      <li>Git / GitHub</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation entre projets -->
+            <div class="project-nav" data-aos="fade-up">
+              <div></div>
+              <a href="portfolio-projets.html" class="btn btn-outline-primary">
+                <i class="bi bi-grid me-2"></i>Tous les projets
+              </a>
+              <a href="portfolio-urban-marginal.html" class="next">
+                <span>Projet suivant</span>
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer id="footer" class="footer accent-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">YANIS ADIDI</strong> <span>Tous droits réservés</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/YnsHlf212" target="_blank"><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>

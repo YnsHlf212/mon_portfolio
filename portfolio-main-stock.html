@@ -1,0 +1,730 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Main-Stock - Portfolio Yanis ADIDI</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/IconCode.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+
+  <style>
+        /* Style Clean Minimal — Flat & Typographic */
+    .project-header {
+      background: #ffffff;
+      padding: 80px 0 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .project-header h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      letter-spacing: -1px;
+    }
+
+    .project-header h1 i { display: none; }
+
+    .project-header .lead {
+      font-size: 1.15rem;
+      color: #888;
+      font-weight: 400;
+    }
+
+    .project-header .lead::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #bf9b30;
+      margin-top: 20px;
+    }
+
+    .project-sidebar {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .project-sidebar h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .project-info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+
+    .project-info-label {
+      font-weight: 500;
+      color: #aaa;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .project-info-value {
+      font-size: 0.95rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tech-badge {
+      background: transparent;
+      border: none;
+      color: #666;
+      padding: 4px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .tech-badge::after { content: ","; color: #ccc; }
+    .tech-badge:last-child::after { content: ""; }
+
+    .project-content {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 30px 40px 40px;
+      margin-bottom: 24px;
+    }
+
+    .project-content h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+      position: relative;
+      padding-left: 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #bf9b30;
+    }
+
+    .project-content h3::before { display: none; }
+
+    .project-content p {
+      color: #555;
+      line-height: 1.9;
+      font-size: 1rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      padding: 10px 0 10px 24px;
+      position: relative;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #444;
+      border-bottom: 1px solid #f5f5f5;
+    }
+
+    .feature-list li:last-child { border-bottom: none; }
+
+    .feature-list li::before {
+      content: "\2014";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: #bf9b30;
+      font-weight: 700;
+      width: auto;
+      height: auto;
+      background: none;
+      border-radius: 0;
+      display: inline;
+      font-size: 1rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .gallery-item {
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover { border-color: #bf9b30; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .metric-card {
+      background: #fff;
+      border-top: 3px solid #bf9b30;
+      padding: 25px;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .team-member {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .team-member i { color: #bf9b30; }
+
+    .challenge-card {
+      background: #fff;
+      border-left: 3px solid #e5c36b;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .challenge-card h5 {
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .challenge-card p {
+      color: #666;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .result-card {
+      background: #fff;
+      border-left: 3px solid #6bc98f;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .result-card h5 {
+      color: #1a1a1a;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .result-card p {
+      color: #666;
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .project-nav {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a1a1a;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .project-nav a:hover { color: #bf9b30; }
+
+    .tech-detail-box {
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+
+    .tech-detail-box h6 {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .tech-detail-box ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 991px) {
+      .project-sidebar {
+        position: relative;
+        top: 0;
+        margin-bottom: 24px;
+      }
+
+      .project-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/YA.png" alt="">
+        <h1 class="sitename">Portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Accueil</a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="index.html#compétences">Compétences</a></li>
+          <li><a href="index.html#formation">Formation</a></li>
+          <li><a href="index.html#entreprise">Entreprise</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li class="dropdown">
+            <a href="portfolio-projets.html" class="active"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-classcord.html">ClassCord</a></li>
+              <li><a href="portfolio-urban-marginal.html">Urban Marginal</a></li>
+              <li><a href="portfolio-ent.html">ENT</a></li>
+              <li><a href="portfolio-mediastock.html">MediaStock</a></li>
+              <li><a href="portfolio-obsilock.html">ObsiLock</a></li>
+              <li><a href="portfolio-main-stock.html">Main-Stock</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio-projets.html#tableau-synthese">Tableau de synthèse</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+
+  <main class="main">
+
+    <!-- Projet 6: Main-Stock -->
+    <section id="portfolio-details-6" class="py-0">
+      <div class="project-header" data-aos="fade-down" style="background: linear-gradient(135deg, #ff7900 0%, #ff5500 100%);">
+        <div class="container">
+          <h1><i class="bi bi-phone-fill me-3"></i>Main-Stock - Application de Gestion de Stock</h1>
+          <p class="lead">Application Android professionnelle pour la gestion des stocks de matériel technique Orange</p>
+        </div>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <!-- Sidebar -->
+          <div class="col-lg-4 mb-4">
+            <div class="project-sidebar">
+              <h4 style="border-bottom-color: #ff7900;"><i class="bi bi-info-circle me-2"></i>Informations du Projet</h4>
+              
+              <div class="project-info-item">
+                <span class="project-info-label">Période</span>
+                <span class="project-info-value">Décembre 2025 → Mars 2026 (4 mois)</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Type</span>
+                <span class="project-info-value">Projet professionnel - Alternance Orange</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Utilisateurs</span>
+                <span class="project-info-value">~15 techniciens Orange</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Équipe</span>
+                <div class="team-members">
+                  <div class="team-member">
+                    <i class="bi bi-person-fill" style="color: #ff7900;"></i>
+                    <span>Yanis ADIDI (Développeur principal)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Rôle</span>
+                <span class="project-info-value">Conception, Développement Full-Stack, Déploiement, Maintenance</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Technologies</span>
+                <div class="tech-stack">
+                  <span class="tech-badge" style="border-color: #ff7900; color: #ff7900;">Java Android</span>
+                  <span class="tech-badge" style="border-color: #ff7900; color: #ff7900;">API REST</span>
+                  <span class="tech-badge" style="border-color: #ff7900; color: #ff7900;">MySQL</span>
+                  <span class="tech-badge" style="border-color: #ff7900; color: #ff7900;">Serveur Java</span>
+                  <span class="tech-badge" style="border-color: #ff7900; color: #ff7900;">Play Store</span>
+                </div>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Distribution</span>
+                <div style="display: inline-flex; align-items: center; gap: 10px; background: #000; color: white; padding: 12px 20px; border-radius: 8px; margin-top: 10px;">
+                  <i class="bi bi-google-play" style="font-size: 1.5rem;"></i>
+                  <div>
+                    <span style="font-size: 0.8rem; opacity: 0.8; display: block;">Disponible sur</span>
+                    <strong style="font-size: 1.1rem;">Google Play</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Statut</span>
+                <span class="badge bg-success" style="font-size: 0.9rem; padding: 8px 15px;">✓ En production</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contenu principal -->
+          <div class="col-lg-8">
+            <!-- Vue d'ensemble -->
+            <div class="project-content">
+              <h3 style="padding-left: 20px;"><span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 5px; height: 70%; background: #ff7900; border-radius: 3px;"></span>Vue d'ensemble</h3>
+              <p>
+                <strong>Main-Stock</strong> est une application Android professionnelle développée pour répondre à un besoin 
+                concret de l'équipe technique Orange : <strong>centraliser et synchroniser la gestion des stocks de matériel</strong> 
+                répartis sur plusieurs magasins de la région (Mougins, Nice, Carros).
+              </p>
+              <p>
+                Avant cette application, la gestion des stocks était fragmentée et manquait de traçabilité. Main-Stock permet 
+                maintenant à l'ensemble des 15 techniciens de l'équipe de consulter, modifier et suivre l'état des stocks 
+                en temps réel, avec un historique complet des mouvements.
+              </p>
+
+              <div class="metrics-grid">
+                <div class="metric-card" style="background: linear-gradient(135deg, #ff7900 0%, #ff5500 100%);">
+                  <div class="metric-value">4</div>
+                  <div class="metric-label">Mois de développement</div>
+                </div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #ff7900 0%, #ff5500 100%);">
+                  <div class="metric-value">15</div>
+                  <div class="metric-label">Utilisateurs actifs</div>
+                </div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #ff7900 0%, #ff5500 100%);">
+                  <div class="metric-value">3</div>
+                  <div class="metric-label">Magasins gérés</div>
+                </div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #ff7900 0%, #ff5500 100%);">
+                  <div class="metric-value">100%</div>
+                  <div class="metric-label">Opérationnel</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Architecture -->
+            <div class="project-content">
+              <h3>Architecture Technique</h3>
+              <p>
+                L'application repose sur une architecture client-serveur classique, avec une application Android native 
+                qui communique avec un serveur Java privé via une API REST sécurisée.
+              </p>
+              
+              <div style="background: #f8f9fa; border-radius: 12px; padding: 30px; margin-top: 20px; text-align: center;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                  <div style="background: white; border: 2px solid #ff7900; border-radius: 12px; padding: 20px 25px; min-width: 120px; text-align: center;">
+                    <i class="bi bi-phone" style="font-size: 2rem; color: #ff7900; display: block; margin-bottom: 10px;"></i>
+                    <span style="font-weight: 600; color: #333;">App Android</span>
+                  </div>
+                  <i class="bi bi-arrow-right" style="font-size: 1.5rem; color: #ff7900;"></i>
+                  <div style="background: white; border: 2px solid #ff7900; border-radius: 12px; padding: 20px 25px; min-width: 120px; text-align: center;">
+                    <i class="bi bi-hdd-network" style="font-size: 2rem; color: #ff7900; display: block; margin-bottom: 10px;"></i>
+                    <span style="font-weight: 600; color: #333;">API REST</span>
+                  </div>
+                  <i class="bi bi-arrow-right" style="font-size: 1.5rem; color: #ff7900;"></i>
+                  <div style="background: white; border: 2px solid #ff7900; border-radius: 12px; padding: 20px 25px; min-width: 120px; text-align: center;">
+                    <i class="bi bi-server" style="font-size: 2rem; color: #ff7900; display: block; margin-bottom: 10px;"></i>
+                    <span style="font-weight: 600; color: #333;">Serveur Java</span>
+                  </div>
+                  <i class="bi bi-arrow-right" style="font-size: 1.5rem; color: #ff7900;"></i>
+                  <div style="background: white; border: 2px solid #ff7900; border-radius: 12px; padding: 20px 25px; min-width: 120px; text-align: center;">
+                    <i class="bi bi-database" style="font-size: 2rem; color: #ff7900; display: block; margin-bottom: 10px;"></i>
+                    <span style="font-weight: 600; color: #333;">MySQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Captures d'écran -->
+            <div class="project-content">
+              <h3>Captures d'écran</h3>
+              <p class="text-muted">
+                <i class="bi bi-camera me-2"></i>Les captures d'écran de l'application seront ajoutées prochainement.
+              </p>
+              <div class="gallery-grid">
+                <div class="gallery-item" style="background: #f5f5f5; display: flex; align-items: center; justify-content: center; height: 300px;">
+                  <div class="text-center text-muted">
+                    <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    <p class="mt-2 mb-0">Écran de connexion</p>
+                  </div>
+                </div>
+                <div class="gallery-item" style="background: #f5f5f5; display: flex; align-items: center; justify-content: center; height: 300px;">
+                  <div class="text-center text-muted">
+                    <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    <p class="mt-2 mb-0">Liste des stocks</p>
+                  </div>
+                </div>
+                <div class="gallery-item" style="background: #f5f5f5; display: flex; align-items: center; justify-content: center; height: 300px;">
+                  <div class="text-center text-muted">
+                    <i class="bi bi-image" style="font-size: 3rem;"></i>
+                    <p class="mt-2 mb-0">Historique</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fonctionnalités -->
+            <div class="project-content">
+              <h3>Fonctionnalités Principales</h3>
+              <ul class="feature-list">
+                <li style="padding-left: 40px;"><strong>Authentification simplifiée</strong> par nom d'utilisateur pour une meilleure traçabilité des actions</li>
+                <li style="padding-left: 40px;"><strong>Gestion multi-magasins</strong> : Mougins, Nice et Carros avec visualisation par site</li>
+                <li style="padding-left: 40px;"><strong>Ajout et suppression de stock</strong> avec mise à jour en temps réel</li>
+                <li style="padding-left: 40px;"><strong>Modification de quantités</strong> avec option d'ajout rapide (+/- quantité)</li>
+                <li style="padding-left: 40px;"><strong>Historique complet</strong> des mouvements de stock avec horodatage et auteur</li>
+                <li style="padding-left: 40px;"><strong>Synchronisation temps réel</strong> entre tous les utilisateurs connectés</li>
+                <li style="padding-left: 40px;"><strong>Interface intuitive</strong> adaptée à une utilisation terrain sur smartphone</li>
+              </ul>
+            </div>
+
+            <!-- Timeline de développement -->
+            <div class="project-content">
+              <h3>Chronologie du Projet</h3>
+              <div style="position: relative; padding-left: 30px; margin-top: 20px;">
+                <div style="position: absolute; left: 8px; top: 0; bottom: 0; width: 3px; background: #ff7900;"></div>
+                
+                <div style="position: relative; margin-bottom: 25px; padding-left: 25px;">
+                  <div style="position: absolute; left: -22px; top: 5px; width: 14px; height: 14px; background: #ff7900; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"></div>
+                  <h5 style="font-size: 1rem; font-weight: 600; color: #ff7900; margin-bottom: 5px;">Décembre 2025 - Analyse & Conception</h5>
+                  <p style="margin: 0; color: #666;">Recueil des besoins auprès de l'équipe technique, conception de la base de données et maquettage de l'interface</p>
+                </div>
+                
+                <div style="position: relative; margin-bottom: 25px; padding-left: 25px;">
+                  <div style="position: absolute; left: -22px; top: 5px; width: 14px; height: 14px; background: #ff7900; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"></div>
+                  <h5 style="font-size: 1rem; font-weight: 600; color: #ff7900; margin-bottom: 5px;">Janvier 2026 - Développement Backend</h5>
+                  <p style="margin: 0; color: #666;">Mise en place du serveur Java, création de l'API REST et configuration de la base MySQL</p>
+                </div>
+                
+                <div style="position: relative; margin-bottom: 25px; padding-left: 25px;">
+                  <div style="position: absolute; left: -22px; top: 5px; width: 14px; height: 14px; background: #ff7900; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"></div>
+                  <h5 style="font-size: 1rem; font-weight: 600; color: #ff7900; margin-bottom: 5px;">Février 2026 - Développement Android</h5>
+                  <p style="margin: 0; color: #666;">Développement de l'application Android native, intégration avec l'API et tests unitaires</p>
+                </div>
+                
+                <div style="position: relative; padding-left: 25px;">
+                  <div style="position: absolute; left: -22px; top: 5px; width: 14px; height: 14px; background: #ff7900; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 5px rgba(0,0,0,0.2);"></div>
+                  <h5 style="font-size: 1rem; font-weight: 600; color: #ff7900; margin-bottom: 5px;">Mars 2026 - Tests & Déploiement</h5>
+                  <p style="margin: 0; color: #666;">Phase de tests avec l'équipe, corrections des retours, publication sur le Play Store et mise en production</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Défis -->
+            <div class="project-content">
+              <h3>Défis Rencontrés</h3>
+              
+              <div class="challenge-card" style="background: #fff3e0; border-left-color: #ff7900;">
+                <h5 style="color: #e65100;"><i class="bi bi-clock me-2"></i>Gestion du temps de développement</h5>
+                <p style="color: #bf360c;">
+                  Le projet a été mené en parallèle de mes missions quotidiennes d'alternance. J'ai dû apprendre à 
+                  organiser mon temps efficacement pour avancer sur le développement tout en assurant mes responsabilités 
+                  opérationnelles au sein de l'équipe technique.
+                </p>
+              </div>
+
+              <div class="challenge-card" style="background: #fff3e0; border-left-color: #ff7900;">
+                <h5 style="color: #e65100;"><i class="bi bi-people me-2"></i>Évolution des besoins</h5>
+                <p style="color: #bf360c;">
+                  Les réunions d'équipe (toutes les deux semaines) généraient régulièrement de nouvelles demandes 
+                  et modifications. J'ai appris à gérer ces évolutions en priorisant les fonctionnalités et en 
+                  communiquant clairement sur les délais de livraison.
+                </p>
+              </div>
+            </div>
+
+            <!-- Résultats -->
+            <div class="project-content">
+              <h3>Résultats & Impact</h3>
+              
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Application en Production</h5>
+                <p>
+                  Main-Stock est aujourd'hui utilisée quotidiennement par l'ensemble de l'équipe technique (15 personnes). 
+                  L'application répond pleinement aux besoins identifiés et a considérablement amélioré la gestion des stocks.
+                </p>
+              </div>
+
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Traçabilité Améliorée</h5>
+                <p>
+                  Grâce au système d'authentification et à l'historique des mouvements, chaque action est tracée. 
+                  L'équipe peut maintenant identifier rapidement qui a effectué quelle modification et quand.
+                </p>
+              </div>
+
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Compétences Acquises</h5>
+                <p>
+                  Ce projet m'a permis de développer des compétences concrètes en développement Android natif, 
+                  architecture client-serveur, gestion de projet en autonomie et communication avec les utilisateurs finaux.
+                </p>
+              </div>
+            </div>
+
+            <!-- Navigation entre projets -->
+            <div class="project-nav" data-aos="fade-up">
+              <a href="portfolio-obsilock.html" class="prev">
+                <i class="bi bi-arrow-left"></i>
+                <span>Projet précédent</span>
+              </a>
+              <a href="portfolio-projets.html" class="btn btn-outline-primary">
+                <i class="bi bi-grid me-2"></i>Tous les projets
+              </a>
+              <div></div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer id="footer" class="footer accent-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">YANIS ADIDI</strong> <span>Tous droits réservés</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/YnsHlf212" target="_blank"><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>

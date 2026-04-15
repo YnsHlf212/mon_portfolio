@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details - DevFolio Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/IconCode.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+
+  <style>
+    .card .d-flex .card-title {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      align-self: center;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .btn-outline-primary {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(191, 155, 48, 0.2);
+    }
+    .btn-outline-primary:hover {
+      background-color: #bf9b30 !important;
+      border-color: #bf9b30 !important;
+      color: white !important;
+      box-shadow: 0 4px 8px rgba(191, 155, 48, 0.4);
+      transform: translateY(-2px);
+    }
+    .btn-outline-secondary {
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+    }
+    .btn-outline-secondary:hover {
+      background-color: #6c757d !important;
+      border-color: #6c757d !important;
+      color: white !important;
+      box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
+      transform: translateY(-2px);
+    }
+    .card {
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/YA.png" alt="">
+        <h1 class="sitename">Portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">Accueil<br></a></li>
+          <li><a href="index.html#about">À propos</a></li>
+          <li><a href="index.html#compétences">Compétences</a></li>
+          <li><a href="index.html#formation">Formation</a></li>
+          <li><a href="index.html#entreprise">Entreprise</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li class="dropdown">
+            <a href="portfolio-projets.html"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-classcord.html">ClassCord</a></li>
+              <li><a href="portfolio-urban-marginal.html">Urban Marginal</a></li>
+              <li><a href="portfolio-ent.html">ENT</a></li>
+              <li><a href="portfolio-mediastock.html">MediaStock</a></li>
+              <li><a href="portfolio-obsilock.html">ObsiLock</a></li>
+              <li><a href="portfolio-main-stock.html">Main-Stock</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio-projets.html#tableau-synthese">Tableau de synthèse</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title" data-aos="fade">
+    <div class="container d-lg-flex justify-content-between align-items-center">
+      <h1 class="mb-2 mb-lg-0">Projets</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="index.html">Accueil</a></li>
+          <li class="current">Projets</li>
+        </ol>
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Portfolio Projets Première Année -->
+  <section class="section" id="projets-premiere-annee" style="padding-top: 20px;">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4" style="color: #bf9b30; font-weight: 600;">
+        <i class="bi bi-calendar-event me-2"></i>Première Année (2024-2025)
+      </h2>
+      <div class="row gy-5">
+
+        <!-- Projet 1 - ClassCord -->
+        <div class="col-lg-6">
+          <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0; border-radius: 12px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-chat-dots-fill fs-2 me-2" style="color: #bf9b30;"></i>
+                <h5 class="card-title mb-0">ClassCord - Client de messagerie interopérable</h5>
+              </div>
+              <p class="card-text">
+                Client Java Swing pour messagerie en réseau local. Connexion serveur IP/port, messages publics/privés, gestion d'utilisateurs, états de présence, 3 modes de connexion (invité, rapide, compte). Architecture MVC.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">Java 11+</span>
+                <span class="badge bg-secondary">MVC</span>
+                <span class="badge bg-info text-dark">Swing</span>
+                <span class="badge bg-dark">Socket TCP</span>
+                <span class="badge bg-success">JSON</span>
+              </div>
+              <a href="https://github.com/YnsHlf212/classcord-client" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-classcord.html" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 2 - Mini Jeu -->
+        <div class="col-lg-6">
+          <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0; border-radius: 12px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-controller fs-2 me-2"></i>
+                <h5 class="card-title mb-0">Mini Jeu de Bataille sur Arène</h5>
+              </div>
+              <p class="card-text">
+                Jeu multijoueur en temps réel sur arène. Combat, personnalisation, chat intégré, authentification (18+), système de classement. Technos : JavaScript, Node.js, Express, Socket.io.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">JavaScript</span>
+                <span class="badge bg-secondary">Node.js</span>
+                <span class="badge bg-info text-dark">Express</span>
+                <span class="badge bg-warning text-dark">Socket.io</span>
+              </div>
+              <a href="https://github.com/YnsHlf212" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-urban-marginal.html" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 3 - MediaStock -->
+        <div class="col-lg-6">
+          <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0; border-radius: 12px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-box-seam fs-2 me-2"></i>
+                <h5 class="card-title mb-0">MediaStock – Gestion de matériel</h5>
+              </div>
+              <p class="card-text">
+                Gestion d'inventaire avec suivi de prêts via QR codes. Génération et scan QR, prêts/retours, filtrage dynamique, gestion d'utilisateurs, quotas, interface 100% responsive. Conteneurisée Docker, technos PHP 8.2, MySQL.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">HTML5/CSS3</span>
+                <span class="badge bg-secondary">PHP 8.2</span>
+                <span class="badge bg-info text-dark">MySQL</span>
+                <span class="badge bg-warning text-dark">Docker</span>
+                <span class="badge bg-success">QR Code</span>
+              </div>
+              <a href="https://github.com/juklau/MediaStock" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-mediastock.html" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Projets Deuxième Année -->
+  <section class="section" id="projets-deuxieme-annee" style="padding-top: 40px;">
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center mb-4" style="color: #bf9b30; font-weight: 600;">
+        <i class="bi bi-calendar-check me-2"></i>Deuxième Année (2025-2026)
+      </h2>
+      <div class="row gy-5">
+
+        <!-- Projet 4 - ENT -->
+        <div class="col-lg-6">
+          <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0; border-radius: 12px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-person-lines-fill fs-2 me-2"></i>
+                <h5 class="card-title mb-0">ENT Prof/Élève – Gestion de Notes</h5>
+              </div>
+              <p class="card-text">
+                Plateforme scolaire Java avec deux interfaces. Élèves : consulter notes, moyennes, commentaires. Professeurs : ajouter matières, saisir notes, consulter résultats. Base de données interne, authentification sécurisée, gestion complète des rôles.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">Java</span>
+                <span class="badge bg-secondary">Base de données</span>
+                <span class="badge bg-info text-dark">Swing</span>
+                <span class="badge bg-dark">Gestion scolaire</span>
+              </div>
+              <a href="https://github.com/YnsHlf212/ENT-/tree/main/eclipse-workspace/TPFinAnnee" target="_blank" class="btn btn-outline-primary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-ent.html" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 5 - ObsiLock -->
+        <div class="col-lg-6">
+          <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0; border-radius: 12px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-shield-lock fs-2 me-2"></i>
+                <h5 class="card-title mb-0">ObsiLock – Coffre-fort numérique</h5>
+              </div>
+              <p class="card-text">
+                Coffre-fort numérique sécurisé avec chiffrement AES-256-GCM. Authentification JWT, gestion de partages, versionnage, quotas, journalisation. Réalisation multi-équipes (7j) : API Slim, client JavaFX, interface Web. Focus cryptographie et collaboration GitHub.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">PHP 8.2</span>
+                <span class="badge bg-secondary">Slim</span>
+                <span class="badge bg-info text-dark">JavaFX</span>
+                <span class="badge bg-warning text-dark">AES-256</span>
+                <span class="badge bg-success">JWT</span>
+              </div>
+              <a href="https://github.com/YnsHlf212/OBSILOCK-javafx" target="_blank" class="btn btn-outline-secondary mb-2">
+                <i class="bi bi-github"></i> Voir sur GitHub
+              </a>
+              <a href="portfolio-obsilock.html" class="btn btn-outline-secondary mb-2 ms-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 6 - Main-Stock -->
+        <div class="col-lg-6">
+          <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0; border-radius: 12px;">
+            <div class="card-body">
+              <div class="d-flex align-items-center mb-2">
+                <i class="bi bi-phone-fill fs-2 me-2" style="color: #bf9b30;"></i>
+                <h5 class="card-title mb-0">Main-Stock – Gestion de Stock Orange</h5>
+              </div>
+              <p class="card-text">
+                Application Android professionnelle pour la gestion des stocks de matériel technique Orange. 
+                Multi-magasins (Mougins, Nice, Carros), synchronisation temps réel, historique des mouvements, 
+                traçabilité complète. Utilisée par 15 techniciens en production.
+              </p>
+              <div class="mb-2">
+                <span class="badge bg-primary">Java Android</span>
+                <span class="badge bg-secondary">API REST</span>
+                <span class="badge bg-info text-dark">MySQL</span>
+                <span class="badge bg-dark">Play Store</span>
+                <span class="badge bg-success">En Production</span>
+              </div>
+              <a href="portfolio-main-stock.html" class="btn btn-outline-secondary mb-2">
+                <i class="bi bi-info-circle"></i> Détail
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="my-5">
+        <div class="row" id="tableau-synthese">
+          <div class="col-lg-8 mx-auto">
+            <h3 class="fw-semibold mb-3 text-center"><i class="bi bi-table me-2"></i> Tableau de synthèse</h3>
+            <div style="width: 100%; height: 800px;">
+              <iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fynshlf212.github.io%2Fmon_portfolio%2FTableauDeSynth%25C3%25A8se.xlsx" style="width: 100%; height: 100%; border: 1px solid #ddd; border-radius: 8px;" allowfullscreen></iframe>
+            </div>
+            <div class="text-center mt-3 mb-5 pb-5">
+              <a href="TableauDeSynthèse.xlsx" class="btn btn-success btn-lg" style="border: 2px solid #155724; box-shadow: 0 2px 6px rgba(0,0,0,0.15);" download><i class="bi bi-file-earmark-excel me-2"></i> Télécharger le tableau Excel</a>
+            </div>
+          </div>
+        </div>
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">YANIS ADIDI</strong> <span>Tout les droit me sont réservé</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/YnsHlf212" target="_blank"><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+</body>
+
+</html>
+

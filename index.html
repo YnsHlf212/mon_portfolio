@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mon Portfolio</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons --> 
+  <link href="assets/img/IconCode.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+       
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/YA.png" alt="">
+        <h1 class="sitename">Portfolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Accueil<br></a></li>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#compétences">Compétences</a></li>
+          <li><a href="#formation">Formation</a></li>
+          <li><a href="#entreprise">Entreprise</a></li>
+          <li><a href="veille.html">Veille</a></li>
+          <li class="dropdown">
+            <a href="portfolio-projets.html"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="portfolio-classcord.html">ClassCord</a></li>
+              <li><a href="portfolio-urban-marginal.html">Urban Marginal</a></li>
+              <li><a href="portfolio-ent.html">ENT</a></li>
+              <li><a href="portfolio-mediastock.html">MediaStock</a></li>
+              <li><a href="portfolio-obsilock.html">ObsiLock</a></li>
+              <li><a href="portfolio-main-stock.html">Main-Stock</a></li>
+            </ul>
+          </li>
+          <li><a href="portfolio-projets.html#tableau-synthese">Tableau de synthèse</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+  <!-- Hero Section -->
+
+    <!-- Acceuil -->
+<section id="hero" class="hero section dark-background">
+
+  <!-- Canvas Particles Background -->
+  <canvas id="hero-particles-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;"></canvas>
+
+  <!-- Overlay transparent pour capturer les événements souris -->
+  <div id="hero-mouse-tracker" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: auto;"></div>
+
+  <!-- Contenu au-dessus -->
+  <div class="container d-flex flex-column align-items-center justify-content-center text-center"
+       style="position: relative; z-index: 10; color: white;"
+       data-aos="fade-up" data-aos-delay="100">
+    <h2>Yanis ADIDI</h2>
+    <p><span class="typed" data-typed-items="Developpeur, Technicien"></span></p>
+    <!-- Boutons centrés -->
+    <div class="d-flex gap-3 justify-content-center mt-4">
+      <a href="portfolio-projets.html" class="btn btn-primary" style="display: flex; align-items: center; gap: 8px; font-weight: 500;">
+        <i class="bi bi-eye"></i> Voir mes projets
+      </a>
+      <a href="assets/YanisAdidiCV2.pdf" class="btn btn-outline-light" style="display: flex; align-items: center; gap: 8px; font-weight: 500;" download>
+        <i class="bi bi-download"></i> Télécharger mon CV
+      </a>
+    </div>
+  </div>
+
+</section>
+<!-- /Hero Section -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <!-- Section Title -->  
+      <div class="section-title" data-aos="fade-up">
+        <h2>A propos de moi</h2>
+      </div><!-- End Section Title -->
+      
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="about-split-layout">
+          
+          <!-- Panneau gauche -->
+          <div class="about-left-panel">
+            <img src="assets/img/Profile.png" alt="Yanis ADIDI" class="about-profile-photo">
+            <h3>Yanis ADIDI</h3>
+            <div class="about-title">Développeur Web et Application</div>
+            <div class="about-social-links">
+              <a href="https://www.linkedin.com/in/yanis-adidi-music/" target="_blank"><i class="bi bi-linkedin"></i></a>
+              <a href="https://github.com/music-music-music" target="_blank"><i class="bi bi-github"></i></a>
+              <a href="mailto:yanis.adidi@mediaschool.me"><i class="bi bi-envelope"></i></a>
+            </div>
+            
+            <!-- Informations -->
+            <div class="about-info-section">
+              <div class="about-info-item"><strong>Email</strong> <span>yanis.adidi@mediaschool.me</span></div>
+              <div class="about-info-item"><strong>Formation</strong> <span>BTS SIO SLAM</span></div>
+              <div class="about-info-item"><strong>Entreprise</strong> <span>Orange</span></div>
+              <div class="about-info-item"><strong>Localisation</strong> <span>Nice, France</span></div>
+            </div>
+          </div>
+          
+          <!-- Panneau droit -->
+          <div class="about-right-panel">
+            <h4><i class="bi bi-person" style="margin-right: 10px; color: #bf9b30;"></i>À propos</h4>
+            <p>
+              Actuellement étudiant en <strong>BTS SIO</strong>, spécialité SLAM (Solutions Logicielles et Applications Métiers),
+              je poursuis ma formation en alternance au sein du groupe Orange.
+            </p>
+            <p>
+              Passionné par l'informatique et le développement depuis mon plus jeune âge, 
+              j'ai à cœur de transformer cette passion en expertise professionnelle. Cette alternance m'a permis de <strong>consolider mes compétences techniques</strong> et 
+              de <strong>découvrir le fonctionnement d'une grande entreprise</strong>.
+            </p>
+            <p>
+              À l'issue de mon BTS, je souhaite intégrer une <strong>école d'ingénieur</strong> en informatique afin de poursuivre mon parcours académique, 
+              approfondir mes connaissances en développement logiciel, et me spécialiser dans des domaines innovants tels que le <strong>développement web mobile ou les architectures logicielles</strong>.
+            </p>
+            <p> 
+              <strong>Mon objectif est clair :</strong> évoluer dans un environnement dynamique où je pourrai mettre mes compétences au service de projets ambitieux tout en continuant à apprendre et à me perfectionner.
+            </p>
+            
+            <!-- Barres de compétences -->
+            <h4 style="margin-top: 30px;"><i class="bi bi-bar-chart" style="margin-right: 10px; color: #bf9b30;"></i>Compétences</h4>
+            <div class="skills-content skills-animation">
+              <div class="progress">
+                <span class="skill"><span>Développement Web/Application</span> <i class="val">77%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"><span>Base de Données</span> <i class="val">63%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"><span>Gestion de Projet</span> <i class="val">60%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+              <div class="progress">
+                <span class="skill"><span>Sécurité</span> <i class="val">58%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+                </div>
+      </div>
+      
+      <!-- Timeline scolaire -->
+      <div class="container mt-4" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="parcours-title"><i class="bi bi-mortarboard" style="color: #bf9b30; margin-right: 10px;"></i> Mon Parcours Scolaire</h4>
+        <div class="parcours-timeline">
+          <div class="parcours-item">
+            <div class="parcours-content">
+              <span class="parcours-date">2022</span>
+              <h5>Baccalauréat Général</h5>
+              <p>Option Mathématiques & NSI<br><em>Lycée du Parc Impérial</em></p>
+            </div>
+          </div>
+          <div class="parcours-item">
+            <div class="parcours-content">
+              <span class="parcours-date">2023 - 2024</span>
+              <h5>BUT GEII</h5>
+              <p>Génie Électrique et Informatique Industrielle<br><em>IUT Nice-Côte D'azur</em></p>
+            </div>
+          </div>
+          <div class="parcours-item">
+            <div class="parcours-content">
+              <span class="parcours-date">2024 - 2026</span>
+              <h5>BTS SIO (SLAM)</h5>
+              <p>Solutions Logicielles et Applications Métiers<br><em>IRIS Mediaschool</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Compétences Section -->
+    <section id="compétences" class="compétences section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Compétences Acquises</h2>
+        <p>Toutes les compétences que j’ai pu acquérir ou renforcer au cours de mes deux années de BTS.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+                <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <h3>Développement d'applications</h3>
+              <p>Capacité à concevoir et développer des applications (desktop, web ou client-serveur) avec des langages comme Java, PHP ou JavaScript. Inclut UI (ex: Swing) + logique métier.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-diagram-3"></i>
+              </div>
+              <h3>Conception et modélisation</h3>
+              <p>Maîtrise des outils de modélisation (UML, MCD) pour structurer une application avant développement. Savoir penser avant de coder.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-database"></i>
+              </div>
+              <h3>Gestion de bases de données</h3>
+              <p>Création, gestion et optimisation de BDD relationnelles (MySQL, PostgreSQL). Requêtes SQL, normalisation et sécurité des données.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-shield-lock"></i>
+              </div>
+              <h3>Sécurisation des applications</h3>
+              <p>Compréhension des enjeux de cybersécurité : authentification, gestion des accès, protection des données sensibles. Logiques type EBIOS.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-plug"></i>
+              </div>
+              <h3>Développement d'API</h3>
+              <p>Mise en place de communications entre systèmes via JSON et REST API. Échanges de données inter-applications.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="compétences-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bug"></i>
+              </div>
+              <h3>Tests et validation</h3>
+              <p>Capacité à tester, débugger et valider une application avant mise en production. Tests unitaires, correction de bugs et amélioration continue.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Compétences Section -->
+
+    <section id="formation" class="formation-modern section">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title text-center mb-4">
+          <h2 style="color: #1a1a1a;">Formation</h2>
+        </div>
+        
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5 text-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/bts-sio.png" alt="BTS SIO" class="formation-img-clean">
+          </div>
+          
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+            <h3 class="formation-title">BTS SIO - Spécialité SLAM</h3>
+            <p class="formation-school">
+              <i class="bi bi-geo-alt"></i> IRIS Mediaschool, Nice 
+              <span style="display: inline-block; background: linear-gradient(135deg, #bf9b30 0%, #d4a838 100%); color: white; padding: 5px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-left: 15px;">2024 - 2026</span>
+            </p>
+            
+            <p class="formation-text">
+              Je suis actuellement en <strong>BTS SIO</strong> (Services Informatiques aux Organisations) spécialité <strong>SLAM</strong> (Solutions Logicielles et Applications Métiers) à <strong>IRIS Mediaschool</strong> à Nice. Cette formation professionnalisante de deux ans m'a permis d'acquérir des compétences solides dans plusieurs domaines :
+            </p>
+            
+            <ul class="formation-list">
+              <li><i class="bi bi-laptop"></i> Développement d'applications web, mobiles et logicielles</li>
+              <li><i class="bi bi-database"></i> Gestion de bases de données et analyse des besoins clients</li>
+              <li><i class="bi bi-code-slash"></i> Programmation, gestion de projet et sécurité informatique</li>
+              <li><i class="bi bi-people"></i> Travail en équipe et communication technique</li>
+            </ul>
+            
+            <p class="formation-text">
+              IRIS Mediaschool propose un environnement moderne avec des intervenants professionnels. L'école favorise l'apprentissage par la pratique grâce à de nombreux projets, des ateliers, et des périodes en alternance en entreprise. Cette approche innovante et orientée vers les métiers du digital me permet de développer les compétences techniques et humaines essentielles pour réussir dans le secteur informatique et poursuivre mes études en école d'ingénieur.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Entreprise Section -->
+    <section id="entreprise" class="entreprise-modern section"> 
+      <div class="container" data-aos="fade-up">
+        
+        <div class="section-title text-center mb-4">
+          <h2 style="color: #1a1a1a;">Mon alternance chez <span style="color: #ff7900;">Orange</span></h2>
+        </div>
+        
+        <div class="row align-items-center gy-5">
+          
+          <!-- Colonne gauche : texte -->
+          <div class="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+            <div class="entreprise-intro">
+              <p class="entreprise-lead">
+                <strong style="color: #ff7900;">Orange</strong> est l'un des principaux opérateurs de télécommunications dans le monde, présent dans plus de <strong>25 pays</strong> et comptant plus de <strong>290 millions de clients</strong>. L'entreprise emploie plus de <strong>130 000 collaborateurs</strong> et joue un rôle majeur dans le développement des technologies numériques.
+              </p>
+              <div class="entreprise-role">
+                <h4><i class="bi bi-briefcase"; margin-right: 10px;"></i> Mon rôle</h4>
+                <p>
+                  Depuis <strong>septembre 2024</strong>, j'effectue mon alternance chez Orange au sein d'une équipe technique dédiée aux solutions internes. Mon rôle consiste à :
+                </p>
+                <ul class="role-list">
+                  <li><i class="bi bi-code-square"></i> Développer des applications métiers</li>
+                  <li><i class="bi bi-tools"></i> Intervenir et maintenir le matériel Orange</li>
+                  <li><i class="bi bi-shield-check"></i> Respecter les exigences de qualité et sécurité</li>
+                  <li><i class="bi bi-people"></i> Travailler en équipe et gérer des projets</li>
+                </ul>
+                <p class="entreprise-lead" style="margin-top: 20px;">
+                  Cette expérience me permet de progresser dans un environnement professionnel exigeant, et de consolider mes compétences en <strong>travail en équipe</strong> et <strong>gestion de projet</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Colonne droite : stats -->
+          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="stat-number" style="color: #d35400;">291M</span>
+                <span class="stat-label">Clients</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" style="color: #d35400;">26</span>
+                <span class="stat-label">Pays</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" style="color: #d35400;">130K</span>
+                <span class="stat-label">Collaborateurs</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number" style="color: #d35400;">43Md€</span>
+                <span class="stat-label">Chiffre d'affaires</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- Image bureau -->
+        <div class="entreprise-image mt-5" data-aos="fade-up" data-aos-delay="300">
+          <img src="assets/img/OraneBureau1.jpg" alt="Bureau Orange" class="img-fluid rounded-4">
+        </div>
+        
+      </div>
+    </section><!-- /Entreprise Section -->
+
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>Si vous avez la moindre question, n'hésitez pas à nous contacter par l'un des moyens suivants. </p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-wrap" data-aos="fade-up" data-aos-delay="200">
+          <div class="row gy-5">
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Adresse</h3>
+                  <p> 33 Avenue Notre Dame 6ème étage, 06000 Nice</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Tél (Médiaschool)</h3>
+                  <p>+33 4 93 91 42 96</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="col-lg-4">
+              <div class="info-item d-flex align-items-center">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email</h3>
+                  <p>yanis.adidi@mediaschool.me</p>
+                </div>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="300">
+          <div class="row gy-4">
+            
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Votre Nom" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Votre Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Sujet" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Chargement...</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Votre message a bien été envoyé ! Merci.</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">YANIS ADIDI</strong> <span>Tout les droits me sont réservé</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/YnsHlf212" target="_blank"><i class="bi bi-github"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="main.js"></script>
+
+  <!-- Hero Particles Background Script -->
+  <script>
+    const heroCanvas = document.getElementById('hero-particles-canvas');
+    const heroCtx = heroCanvas.getContext('2d');
+    const heroMouseTracker = document.getElementById('hero-mouse-tracker');
+    
+    function resizeHeroCanvas() {
+      heroCanvas.width = heroCanvas.offsetWidth;
+      heroCanvas.height = heroCanvas.offsetHeight;
+    }
+    resizeHeroCanvas();
+
+    const heroParticles = [];
+    const heroParticleCount = 120;
+    const heroMouse = { x: null, y: null, radius: 150 };
+
+    class HeroParticle {
+      constructor() {
+        this.x = Math.random() * heroCanvas.width;
+        this.y = Math.random() * heroCanvas.height;
+        this.vx = (Math.random() - 0.5) * 0.1;
+        this.vy = (Math.random() - 0.5) * 0.1;
+        this.radius = Math.random() * 3 + 1.5;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        
+        if (this.x < 0 || this.x > heroCanvas.width) this.vx *= -1;
+        if (this.y < 0 || this.y > heroCanvas.height) this.vy *= -1;
+
+        if (heroMouse.x !== null && heroMouse.y !== null) {
+          const dx = heroMouse.x - this.x;
+          const dy = heroMouse.y - this.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < heroMouse.radius) {
+            const force = (heroMouse.radius - distance) / heroMouse.radius;
+            const angle = Math.atan2(dy, dx);
+            this.vx -= Math.cos(angle) * force * 0.08;
+            this.vy -= Math.sin(angle) * force * 0.08;
+          }
+        }
+        
+        this.vx *= 0.99;
+        this.vy *= 0.99;
+      }
+
+      draw() {
+        heroCtx.beginPath();
+        heroCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        heroCtx.fillStyle = 'rgba(255,255,255,0.9)';
+        heroCtx.fill();
+      }
+    }
+
+    for (let i = 0; i < heroParticleCount; i++) {
+      heroParticles.push(new HeroParticle());
+    }
+
+    function connectHeroParticles() {
+      for (let i = 0; i < heroParticles.length; i++) {
+        for (let j = i + 1; j < heroParticles.length; j++) {
+          const dx = heroParticles[i].x - heroParticles[j].x;
+          const dy = heroParticles[i].y - heroParticles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 150) {
+            heroCtx.beginPath();
+            heroCtx.strokeStyle = `rgba(255,255,255,${0.4 * (1 - distance / 150)})`;
+            heroCtx.lineWidth = 1.5;
+            heroCtx.moveTo(heroParticles[i].x, heroParticles[i].y);
+            heroCtx.lineTo(heroParticles[j].x, heroParticles[j].y);
+            heroCtx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateHeroParticles() {
+      heroCtx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+      heroParticles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      connectHeroParticles();
+      requestAnimationFrame(animateHeroParticles);
+    }
+
+    animateHeroParticles();
+
+    // Capture mouse events on the entire hero section
+    const heroSection = document.querySelector('.hero');
+    
+    document.addEventListener('mousemove', (e) => {
+      const heroRect = heroSection.getBoundingClientRect();
+      // Check if mouse is within hero section
+      if (e.clientY >= heroRect.top && e.clientY <= heroRect.bottom) {
+        const canvasRect = heroCanvas.getBoundingClientRect();
+        heroMouse.x = e.clientX - canvasRect.left;
+        heroMouse.y = e.clientY - canvasRect.top;
+      } else {
+        heroMouse.x = null;
+        heroMouse.y = null;
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      resizeHeroCanvas();
+    });
+
+    // Animate skill bars on scroll
+    const skillsSection = document.querySelector('#compétences');
+    if (skillsSection) {
+      const skillBarsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bars = entry.target.querySelectorAll('.bar-fill');
+            bars.forEach(bar => {
+              const width = bar.getAttribute('data-width');
+              setTimeout(() => {
+                bar.style.width = width;
+              }, 100);
+            });
+            skillBarsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      skillBarsObserver.observe(skillsSection);
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

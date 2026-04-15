@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Bars Demo</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .header p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .demo-section {
+      max-width: 1200px;
+      margin: 0 auto 80px;
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+
+    .demo-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .demo-description {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    /* ============================================
+       STYLE 1 : Classic Horizontal Bars
+       ============================================ */
+    .skill-bar-classic {
+      margin-bottom: 25px;
+    }
+
+    .skill-bar-classic .skill-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-bar-classic .skill-percentage {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .skill-bar-classic .bar-container {
+      width: 100%;
+      height: 12px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-bar-classic .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #bf9b30 0%, #d4a838 100%);
+      border-radius: 10px;
+      transition: width 1.5s ease-out;
+    }
+
+    /* ============================================
+       STYLE 2 : Gradient with Glow
+       ============================================ */
+    .skill-bar-glow {
+      margin-bottom: 25px;
+    }
+
+    .skill-bar-glow .skill-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-bar-glow .skill-percentage {
+      font-size: 14px;
+      font-weight: 700;
+      color: #bf9b30;
+    }
+
+    .skill-bar-glow .bar-container {
+      width: 100%;
+      height: 16px;
+      background: #f0f0f0;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .skill-bar-glow .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #bf9b30 0%, #d4a838 50%, #ffd700 100%);
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(191, 155, 48, 0.6);
+      transition: width 1.5s ease-out;
+      position: relative;
+    }
+
+    .skill-bar-glow .bar-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+      border-radius: 20px 20px 0 0;
+    }
+
+    /* ============================================
+       STYLE 3 : Striped Animated
+       ============================================ */
+    .skill-bar-striped {
+      margin-bottom: 25px;
+    }
+
+    .skill-bar-striped .skill-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-bar-striped .skill-percentage {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .skill-bar-striped .bar-container {
+      width: 100%;
+      height: 14px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .skill-bar-striped .bar-fill {
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        #bf9b30 25%,
+        #d4a838 25%,
+        #d4a838 50%,
+        #bf9b30 50%,
+        #bf9b30 75%,
+        #d4a838 75%,
+        #d4a838
+      );
+      background-size: 30px 30px;
+      border-radius: 10px;
+      animation: stripe-move 1s linear infinite;
+      transition: width 1.5s ease-out;
+    }
+
+    @keyframes stripe-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 30px 0; }
+    }
+
+    /* ============================================
+       STYLE 4 : Circular Progress
+       ============================================ */
+    .skill-circles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .skill-circle {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .circle-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+    }
+
+    .circle-bg {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 10px solid #e0e0e0;
+      box-sizing: border-box;
+    }
+
+    .circle-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 10px solid transparent;
+      border-top-color: #bf9b30;
+      border-right-color: #bf9b30;
+      box-sizing: border-box;
+      transform: rotate(-90deg);
+      transition: transform 1.5s ease-out;
+    }
+
+    .circle-percentage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .circle-name {
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-align: center;
+    }
+
+    /* ============================================
+       STYLE 5 : Minimal with Label Inside
+       ============================================ */
+    .skill-bar-minimal {
+      margin-bottom: 25px;
+    }
+
+    .skill-bar-minimal .bar-container {
+      width: 100%;
+      height: 40px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #e0e0e0;
+    }
+
+    .skill-bar-minimal .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #bf9b30 0%, #d4a838 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      transition: width 1.5s ease-out;
+      position: relative;
+    }
+
+    .skill-bar-minimal .skill-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      position: absolute;
+      left: 15px;
+    }
+
+    .skill-bar-minimal .skill-percentage {
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      position: absolute;
+      right: 15px;
+    }
+
+    /* ============================================
+       STYLE 6 : Dot Progress
+       ============================================ */
+    .skill-bar-dots {
+      margin-bottom: 25px;
+    }
+
+    .skill-bar-dots .skill-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-bar-dots .skill-percentage {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .skill-bar-dots .dots-container {
+      display: flex;
+      gap: 8px;
+    }
+
+    .skill-bar-dots .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      transition: all 0.3s ease;
+    }
+
+    .skill-bar-dots .dot.active {
+      background: linear-gradient(135deg, #bf9b30 0%, #d4a838 100%);
+      box-shadow: 0 0 8px rgba(191, 155, 48, 0.5);
+    }
+
+    /* ============================================
+       STYLE 7 : Card Style
+       ============================================ */
+    .skills-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .skill-card {
+      background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    .skill-card .skill-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 15px;
+    }
+
+    .skill-card .bar-container {
+      width: 100%;
+      height: 8px;
+      background: #e0e0e0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .skill-card .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #bf9b30 0%, #d4a838 100%);
+      border-radius: 10px;
+      transition: width 1.5s ease-out;
+    }
+
+    .skill-card .skill-percentage {
+      font-size: 24px;
+      font-weight: 700;
+      color: #bf9b30;
+    }
+
+    /* Animation trigger */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Skill Bars — 7 Styles</h1>
+    <p>Choisis le style qui colle à ton identité</p>
+  </div>
+
+  <!-- STYLE 1 : Classic -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 1 — Classic Horizontal</div>
+    <div class="demo-description">Simple, clean, professionnel</div>
+    
+    <div class="skill-bar-classic">
+      <div class="skill-name">
+        <span>HTML/CSS</span>
+        <span class="skill-percentage">90%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="90%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-classic">
+      <div class="skill-name">
+        <span>JavaScript</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="85%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-classic">
+      <div class="skill-name">
+        <span>Python</span>
+        <span class="skill-percentage">80%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-classic">
+      <div class="skill-name">
+        <span>SQL</span>
+        <span class="skill-percentage">75%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="75%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE 2 : Glow -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 2 — Gradient with Glow</div>
+    <div class="demo-description">Moderne, lumineux, premium</div>
+    
+    <div class="skill-bar-glow">
+      <div class="skill-name">
+        <span>HTML/CSS</span>
+        <span class="skill-percentage">90%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="90%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-glow">
+      <div class="skill-name">
+        <span>JavaScript</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="85%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-glow">
+      <div class="skill-name">
+        <span>Python</span>
+        <span class="skill-percentage">80%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-glow">
+      <div class="skill-name">
+        <span>SQL</span>
+        <span class="skill-percentage">75%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="75%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE 3 : Striped -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 3 — Striped Animated</div>
+    <div class="demo-description">Dynamique, mouvement constant</div>
+    
+    <div class="skill-bar-striped">
+      <div class="skill-name">
+        <span>HTML/CSS</span>
+        <span class="skill-percentage">90%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="90%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-striped">
+      <div class="skill-name">
+        <span>JavaScript</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="85%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-striped">
+      <div class="skill-name">
+        <span>Python</span>
+        <span class="skill-percentage">80%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-striped">
+      <div class="skill-name">
+        <span>SQL</span>
+        <span class="skill-percentage">75%</span>
+      </div>
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="75%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE 4 : Circular -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 4 — Circular Progress</div>
+    <div class="demo-description">Compact, visuel, moderne</div>
+    
+    <div class="skill-circles">
+      <div class="skill-circle">
+        <div class="circle-wrap">
+          <div class="circle-bg"></div>
+          <svg class="circle-progress" width="120" height="120" style="transform: rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#bf9b30" stroke-width="10" 
+                    stroke-dasharray="314" stroke-dashoffset="314" data-progress="90"
+                    style="transition: stroke-dashoffset 1.5s ease-out;"></circle>
+          </svg>
+          <div class="circle-percentage">90%</div>
+        </div>
+        <div class="circle-name">HTML/CSS</div>
+      </div>
+
+      <div class="skill-circle">
+        <div class="circle-wrap">
+          <div class="circle-bg"></div>
+          <svg class="circle-progress" width="120" height="120" style="transform: rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#bf9b30" stroke-width="10" 
+                    stroke-dasharray="314" stroke-dashoffset="314" data-progress="85"
+                    style="transition: stroke-dashoffset 1.5s ease-out;"></circle>
+          </svg>
+          <div class="circle-percentage">85%</div>
+        </div>
+        <div class="circle-name">JavaScript</div>
+      </div>
+
+      <div class="skill-circle">
+        <div class="circle-wrap">
+          <div class="circle-bg"></div>
+          <svg class="circle-progress" width="120" height="120" style="transform: rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#bf9b30" stroke-width="10" 
+                    stroke-dasharray="314" stroke-dashoffset="314" data-progress="80"
+                    style="transition: stroke-dashoffset 1.5s ease-out;"></circle>
+          </svg>
+          <div class="circle-percentage">80%</div>
+        </div>
+        <div class="circle-name">Python</div>
+      </div>
+
+      <div class="skill-circle">
+        <div class="circle-wrap">
+          <div class="circle-bg"></div>
+          <svg class="circle-progress" width="120" height="120" style="transform: rotate(-90deg);">
+            <circle cx="60" cy="60" r="50" fill="none" stroke="#bf9b30" stroke-width="10" 
+                    stroke-dasharray="314" stroke-dashoffset="314" data-progress="75"
+                    style="transition: stroke-dashoffset 1.5s ease-out;"></circle>
+          </svg>
+          <div class="circle-percentage">75%</div>
+        </div>
+        <div class="circle-name">SQL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE 5 : Minimal Inside -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 5 — Minimal with Label Inside</div>
+    <div class="demo-description">Compact, tout-en-un</div>
+    
+    <div class="skill-bar-minimal">
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="90%">
+          <span class="skill-name">HTML/CSS</span>
+          <span class="skill-percentage">90%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-bar-minimal">
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="85%">
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-percentage">85%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-bar-minimal">
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="80%">
+          <span class="skill-name">Python</span>
+          <span class="skill-percentage">80%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-bar-minimal">
+      <div class="bar-container">
+        <div class="bar-fill" style="width: 0;" data-width="75%">
+          <span class="skill-name">SQL</span>
+          <span class="skill-percentage">75%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE 6 : Dots -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 6 — Dot Progress</div>
+    <div class="demo-description">Original, minimaliste</div>
+    
+    <div class="skill-bar-dots">
+      <div class="skill-name">
+        <span>HTML/CSS</span>
+        <span class="skill-percentage">90%</span>
+      </div>
+      <div class="dots-container" data-total="10" data-active="9">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-dots">
+      <div class="skill-name">
+        <span>JavaScript</span>
+        <span class="skill-percentage">85%</span>
+      </div>
+      <div class="dots-container" data-total="10" data-active="8">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-dots">
+      <div class="skill-name">
+        <span>Python</span>
+        <span class="skill-percentage">80%</span>
+      </div>
+      <div class="dots-container" data-total="10" data-active="8">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+
+    <div class="skill-bar-dots">
+      <div class="skill-name">
+        <span>SQL</span>
+        <span class="skill-percentage">75%</span>
+      </div>
+      <div class="dots-container" data-total="10" data-active="7">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STYLE 7 : Cards -->
+  <div class="demo-section animate-on-scroll">
+    <div class="demo-title">Style 7 — Card Style</div>
+    <div class="demo-description">Premium, espacé, élégant</div>
+    
+    <div class="skills-cards">
+      <div class="skill-card">
+        <div class="skill-name">HTML/CSS</div>
+        <div class="bar-container">
+          <div class="bar-fill" style="width: 0;" data-width="90%"></div>
+        </div>
+        <div class="skill-percentage">90%</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-name">JavaScript</div>
+        <div class="bar-container">
+          <div class="bar-fill" style="width: 0;" data-width="85%"></div>
+        </div>
+        <div class="skill-percentage">85%</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-name">Python</div>
+        <div class="bar-container">
+          <div class="bar-fill" style="width: 0;" data-width="80%"></div>
+        </div>
+        <div class="skill-percentage">80%</div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-name">SQL</div>
+        <div class="bar-container">
+          <div class="bar-fill" style="width: 0;" data-width="75%"></div>
+        </div>
+        <div class="skill-percentage">75%</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animation on scroll
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Animate bars
+          const bars = entry.target.querySelectorAll('.bar-fill');
+          bars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            setTimeout(() => {
+              bar.style.width = width;
+            }, 100);
+          });
+
+          // Animate circles
+          const circles = entry.target.querySelectorAll('circle[data-progress]');
+          circles.forEach(circle => {
+            const progress = parseInt(circle.getAttribute('data-progress'));
+            const circumference = 2 * Math.PI * 50;
+            const offset = circumference - (progress / 100 * circumference);
+            setTimeout(() => {
+              circle.style.strokeDashoffset = offset;
+            }, 100);
+          });
+
+          // Animate dots
+          const dotContainers = entry.target.querySelectorAll('.dots-container');
+          dotContainers.forEach(container => {
+            const active = parseInt(container.getAttribute('data-active'));
+            const dots = container.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+              if (index < active) {
+                setTimeout(() => {
+                  dot.classList.add('active');
+                }, index * 100);
+              }
+            });
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>

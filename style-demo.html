@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Style Demo - Pages RP</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       DEMO PAGE SHELL
+       ================================================================ */
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', system-ui, sans-serif;
+      background: #f0f0f0;
+    }
+
+    /* Sticky selector bar */
+    .style-selector {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+      background: #1a1a1a;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .style-selector .label {
+      color: #bf9b30;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+
+    .style-selector a {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      white-space: nowrap;
+    }
+
+    .style-selector a.current {
+      background: #bf9b30;
+      color: #1a1a1a;
+      border-color: #bf9b30;
+    }
+
+    .style-selector a:not(.current) {
+      background: rgba(255,255,255,0.08);
+      color: #ccc;
+      border-color: rgba(255,255,255,0.15);
+    }
+
+    .style-selector a:not(.current):hover {
+      background: rgba(191,155,48,0.2);
+      color: #bf9b30;
+      border-color: #bf9b30;
+    }
+
+    /* Section separator */
+    .style-section {
+      padding: 0 0 80px;
+    }
+
+    .style-banner {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .style-banner h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .style-banner p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .style-banner .style-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    /* ================================================================
+       STYLE 0: ACTUEL (reference)
+       ================================================================ */
+    .style-current .style-banner { background: #f8f8f8; }
+    .style-current .style-banner h2 { color: #1a1a1a; }
+    .style-current .style-banner p { color: #666; }
+    .style-current .style-banner .style-tag { background: #bf9b30; color: white; }
+
+    .style-current .project-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 60px 0 40px;
+      color: white;
+      margin-bottom: 40px;
+    }
+    .style-current .project-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: white;
+    }
+    .style-current .project-header .lead {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 800px;
+    }
+    .style-current .project-sidebar {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .style-current .project-sidebar h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      border-bottom: 3px solid #bf9b30;
+      padding-bottom: 10px;
+    }
+    .style-current .project-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .style-current .project-info-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    .style-current .project-info-label {
+      font-weight: 600;
+      color: #666;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .style-current .project-info-value {
+      font-size: 1rem;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+    .style-current .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .style-current .tech-badge {
+      background: #fff;
+      border: 2px solid #bf9b30;
+      color: #bf9b30;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .style-current .tech-badge:hover {
+      background: #bf9b30;
+      color: white;
+      transform: translateY(-2px);
+    }
+    .style-current .project-content {
+      background: white;
+      border-radius: 12px;
+      padding: 25px 40px 40px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      margin-bottom: 30px;
+    }
+    .style-current .project-content h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      position: relative;
+      padding-left: 20px;
+    }
+    .style-current .project-content h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 70%;
+      background: #bf9b30;
+      border-radius: 3px;
+    }
+    .style-current .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+    .style-current .feature-list li {
+      padding: 12px 0 12px 40px;
+      position: relative;
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+    .style-current .feature-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      background: #bf9b30;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .style-current .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .style-current .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .style-current .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    .style-current .gallery-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .style-current .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .style-current .metric-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .style-current .metric-value {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .style-current .metric-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .style-current .team-members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .style-current .team-member {
+      background: white;
+      border: 2px solid #e0e0e0;
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+    }
+    .style-current .team-member:hover {
+      border-color: #bf9b30;
+      transform: translateY(-2px);
+    }
+    .style-current .team-member i { color: #bf9b30; font-size: 1.2rem; }
+    .style-current .challenge-card {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .style-current .challenge-card h5 { color: #856404; font-size: 1.1rem; margin-bottom: 10px; }
+    .style-current .challenge-card p { color: #856404; margin-bottom: 0; }
+    .style-current .result-card {
+      background: #d4edda;
+      border-left: 4px solid #28a745;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .style-current .result-card h5 { color: #155724; font-size: 1.1rem; margin-bottom: 10px; }
+    .style-current .result-card p { color: #155724; margin-bottom: 0; }
+    .style-current .project-nav {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .style-current .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #bf9b30;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .style-current .project-nav a:hover { color: #d4a838; }
+    .style-current .tech-detail-box {
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+    }
+    .style-current .tech-detail-box h6 { font-weight: 700; margin-bottom: 10px; }
+    .style-current .tech-detail-box ul { padding-left: 20px; margin-bottom: 0; }
+    @media (max-width: 991px) {
+      .style-current .project-sidebar { position: relative; top: 0; margin-bottom: 30px; }
+      .style-current .project-content { padding: 25px; }
+    }
+
+    /* ================================================================
+       STYLE A: NOIR ELEGANCE (Dark Premium)
+       ================================================================ */
+    .style-a { background: #0d0d0d; }
+    .style-a .style-banner { background: #0d0d0d; }
+    .style-a .style-banner h2 { color: #fff; }
+    .style-a .style-banner p { color: #999; }
+    .style-a .style-banner .style-tag { background: #bf9b30; color: #0d0d0d; }
+
+    .style-a .project-header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      padding: 60px 0 40px;
+      color: white;
+      margin-bottom: 40px;
+      border-bottom: 3px solid #bf9b30;
+    }
+    .style-a .project-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .style-a .project-header .lead {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      color: #ccc;
+    }
+    .style-a .project-sidebar {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .style-a .project-sidebar h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #bf9b30;
+      border-bottom: 2px solid rgba(191,155,48,0.3);
+      padding-bottom: 10px;
+    }
+    .style-a .project-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .style-a .project-info-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .style-a .project-info-label {
+      font-weight: 600;
+      color: #888;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .style-a .project-info-value {
+      font-size: 1rem;
+      color: #e0e0e0;
+      font-weight: 500;
+    }
+    .style-a .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .style-a .tech-badge {
+      background: transparent;
+      border: 2px solid #bf9b30;
+      color: #bf9b30;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .style-a .tech-badge:hover {
+      background: #bf9b30;
+      color: #0d0d0d;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(191,155,48,0.4);
+    }
+    .style-a .project-content {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 25px 40px 40px;
+      margin-bottom: 30px;
+    }
+    .style-a .project-content h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #fff;
+      position: relative;
+      padding-left: 20px;
+    }
+    .style-a .project-content h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 5px;
+      height: 70%;
+      background: #bf9b30;
+      border-radius: 3px;
+      box-shadow: 0 0 10px rgba(191,155,48,0.5);
+    }
+    .style-a .project-content p { color: #bbb; line-height: 1.8; }
+    .style-a .feature-list { list-style: none; padding: 0; }
+    .style-a .feature-list li {
+      padding: 12px 0 12px 40px;
+      position: relative;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #ccc;
+    }
+    .style-a .feature-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 28px;
+      height: 28px;
+      background: rgba(191,155,48,0.2);
+      color: #bf9b30;
+      border: 1px solid #bf9b30;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+    .style-a .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .style-a .gallery-item {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .style-a .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(191,155,48,0.2);
+      border-color: rgba(191,155,48,0.3);
+    }
+    .style-a .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .style-a .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .style-a .metric-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(191,155,48,0.25);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .style-a .metric-card:hover {
+      border-color: #bf9b30;
+      box-shadow: 0 0 20px rgba(191,155,48,0.15);
+    }
+    .style-a .metric-value { font-size: 2.5rem; font-weight: 700; color: #bf9b30; margin-bottom: 5px; }
+    .style-a .metric-label { font-size: 0.9rem; color: #888; }
+    .style-a .team-members { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px; }
+    .style-a .team-member {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ccc;
+      transition: all 0.3s ease;
+    }
+    .style-a .team-member:hover { border-color: #bf9b30; }
+    .style-a .team-member i { color: #bf9b30; font-size: 1.2rem; }
+    .style-a .challenge-card {
+      background: rgba(255,193,7,0.08);
+      border-left: 4px solid #bf9b30;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .style-a .challenge-card h5 { color: #bf9b30; font-size: 1.1rem; margin-bottom: 10px; }
+    .style-a .challenge-card p { color: #aaa; margin-bottom: 0; }
+    .style-a .result-card {
+      background: rgba(40,167,69,0.08);
+      border-left: 4px solid #28a745;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .style-a .result-card h5 { color: #5cb85c; font-size: 1.1rem; margin-bottom: 10px; }
+    .style-a .result-card p { color: #aaa; margin-bottom: 0; }
+    .style-a .project-nav {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 20px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .style-a .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #bf9b30;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .style-a .project-nav a:hover { color: #d4a838; }
+    .style-a .tech-detail-box {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.02);
+    }
+    .style-a .tech-detail-box h6 { font-weight: 700; margin-bottom: 10px; color: #fff; }
+    .style-a .tech-detail-box ul { padding-left: 20px; margin-bottom: 0; color: #bbb; }
+    .style-a .btn-dark { background: #bf9b30; border-color: #bf9b30; color: #0d0d0d; }
+    .style-a .btn-dark:hover { background: #d4a838; border-color: #d4a838; }
+    .style-a .badge.bg-success { background-color: #28a745 !important; }
+    @media (max-width: 991px) {
+      .style-a .project-sidebar { position: relative; top: 0; margin-bottom: 30px; }
+      .style-a .project-content { padding: 25px; }
+    }
+
+    /* ================================================================
+       STYLE B: CLEAN MINIMAL (Flat & Typographic)
+       ================================================================ */
+    .style-b { background: #ffffff; }
+    .style-b .style-banner { background: #ffffff; }
+    .style-b .style-banner h2 { color: #1a1a1a; }
+    .style-b .style-banner p { color: #888; }
+    .style-b .style-banner .style-tag { background: #1a1a1a; color: #fff; }
+
+    .style-b .project-header {
+      background: #ffffff;
+      padding: 80px 0 40px;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .style-b .project-header h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      letter-spacing: -1px;
+    }
+    .style-b .project-header h1 i { display: none; }
+    .style-b .project-header .lead {
+      font-size: 1.15rem;
+      color: #888;
+      font-weight: 400;
+    }
+    .style-b .project-header .lead::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #bf9b30;
+      margin-top: 20px;
+    }
+    .style-b .project-sidebar {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+    }
+    .style-b .project-sidebar h4 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .style-b .project-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .style-b .project-info-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .style-b .project-info-label {
+      font-weight: 500;
+      color: #aaa;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .style-b .project-info-value { font-size: 0.95rem; color: #333; font-weight: 500; }
+    .style-b .tech-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .style-b .tech-badge {
+      background: transparent;
+      border: none;
+      color: #666;
+      padding: 4px 0;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .style-b .tech-badge::after { content: ","; color: #ccc; }
+    .style-b .tech-badge:last-child::after { content: ""; }
+    .style-b .project-content {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+      padding: 30px 40px 40px;
+      margin-bottom: 24px;
+    }
+    .style-b .project-content h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 24px;
+      color: #1a1a1a;
+      position: relative;
+      padding-left: 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #bf9b30;
+    }
+    .style-b .project-content h3::before { display: none; }
+    .style-b .project-content p { color: #555; line-height: 1.9; font-size: 1rem; }
+    .style-b .feature-list { list-style: none; padding: 0; }
+    .style-b .feature-list li {
+      padding: 10px 0 10px 24px;
+      position: relative;
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #444;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .style-b .feature-list li:last-child { border-bottom: none; }
+    .style-b .feature-list li::before {
+      content: "\2014";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: #bf9b30;
+      font-weight: 700;
+      width: auto;
+      height: auto;
+      background: none;
+      border-radius: 0;
+      display: inline;
+      font-size: 1rem;
+    }
+    .style-b .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .style-b .gallery-item {
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .style-b .gallery-item:hover { border-color: #bf9b30; }
+    .style-b .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .style-b .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .style-b .metric-card {
+      background: #fff;
+      border-top: 3px solid #bf9b30;
+      padding: 25px;
+      text-align: center;
+    }
+    .style-b .metric-value { font-size: 2.5rem; font-weight: 800; color: #1a1a1a; margin-bottom: 5px; }
+    .style-b .metric-label { font-size: 0.85rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+    .style-b .team-members { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+    .style-b .team-member {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+    .style-b .team-member i { color: #bf9b30; }
+    .style-b .challenge-card {
+      background: #fff;
+      border-left: 3px solid #e5c36b;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .style-b .challenge-card h5 { color: #1a1a1a; font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .style-b .challenge-card p { color: #666; margin-bottom: 0; font-size: 0.95rem; }
+    .style-b .result-card {
+      background: #fff;
+      border-left: 3px solid #6bc98f;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .style-b .result-card h5 { color: #1a1a1a; font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+    .style-b .result-card p { color: #666; margin-bottom: 0; font-size: 0.95rem; }
+    .style-b .project-nav {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      border-radius: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .style-b .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a1a1a;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .style-b .project-nav a:hover { color: #bf9b30; }
+    .style-b .tech-detail-box {
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+    .style-b .tech-detail-box h6 { font-weight: 600; margin-bottom: 10px; color: #1a1a1a; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; }
+    .style-b .tech-detail-box ul { padding-left: 18px; margin-bottom: 0; color: #555; font-size: 0.9rem; }
+    @media (max-width: 991px) {
+      .style-b .project-sidebar { position: relative; top: 0; margin-bottom: 24px; }
+      .style-b .project-content { padding: 24px; }
+    }
+
+    /* ================================================================
+       STYLE C: BENTO GRID (Modern Asymmetric)
+       ================================================================ */
+    .style-c { background: #f3f3f3; }
+    .style-c .style-banner { background: #f3f3f3; }
+    .style-c .style-banner h2 { color: #1a1a1a; }
+    .style-c .style-banner p { color: #666; }
+    .style-c .style-banner .style-tag { background: linear-gradient(135deg, #667eea, #764ba2); color: white; }
+
+    .style-c .bento-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+      gap: 16px;
+    }
+    .style-c .bento-cell {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+    .style-c .bento-cell:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+    .style-c .bento-header {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 50px 40px;
+      border-radius: 24px;
+    }
+    .style-c .bento-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .style-c .bento-header .lead { font-size: 1.1rem; opacity: 0.9; }
+    .style-c .bento-span-2 { grid-column: span 2; }
+    .style-c .bento-span-3 { grid-column: span 3; }
+    .style-c .bento-span-4 { grid-column: 1 / -1; }
+    .style-c .bento-cell h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .style-c .bento-cell .big-value {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      line-height: 1.1;
+    }
+    .style-c .bento-cell .sub-value {
+      font-size: 0.9rem;
+      color: #888;
+      margin-top: 4px;
+    }
+    .style-c .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; }
+    .style-c .tech-badge {
+      background: #f3f3f3;
+      border: none;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .style-c .bento-cell.accent-cell {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .style-c .bento-cell.accent-cell h4 { color: rgba(255,255,255,0.7); }
+    .style-c .bento-cell.accent-cell .big-value { color: white; }
+    .style-c .bento-cell.accent-cell .sub-value { color: rgba(255,255,255,0.8); }
+    .style-c .bento-cell.gold-cell {
+      background: #bf9b30;
+      color: white;
+    }
+    .style-c .bento-cell.gold-cell h4 { color: rgba(255,255,255,0.7); }
+    .style-c .bento-cell.gold-cell .big-value { color: white; }
+    .style-c .bento-gallery {
+      grid-column: 1 / -1;
+      padding: 28px;
+    }
+    .style-c .bento-gallery h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+    .style-c .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .style-c .gallery-item {
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .style-c .gallery-item:hover { transform: scale(1.03); }
+    .style-c .gallery-item img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .style-c .bento-features { grid-column: 1 / -1; }
+    .style-c .bento-features h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+    .style-c .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+    .style-c .feature-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.6;
+    }
+    .style-c .feature-list li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background: #bf9b30;
+      color: white;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: bold;
+    }
+    .style-c .bento-challenges { grid-column: span 2; }
+    .style-c .bento-results { grid-column: span 2; }
+    .style-c .bento-challenges h3,
+    .style-c .bento-results h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+    .style-c .challenge-card {
+      background: #fef9e7;
+      border-left: 4px solid #bf9b30;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .style-c .challenge-card h5 { color: #8a6d1b; font-size: 1rem; margin-bottom: 6px; }
+    .style-c .challenge-card p { color: #8a6d1b; margin-bottom: 0; font-size: 0.9rem; }
+    .style-c .result-card {
+      background: #e8f5e9;
+      border-left: 4px solid #4caf50;
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+    .style-c .result-card h5 { color: #2e7d32; font-size: 1rem; margin-bottom: 6px; }
+    .style-c .result-card p { color: #2e7d32; margin-bottom: 0; font-size: 0.9rem; }
+    .style-c .project-nav {
+      grid-column: 1 / -1;
+      background: #fff;
+      padding: 20px 28px;
+      border-radius: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .style-c .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #bf9b30;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .style-c .project-nav a:hover { color: #8a6d1b; }
+    .style-c .team-members { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .style-c .team-member {
+      background: #f3f3f3;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+    }
+    .style-c .team-member i { color: #bf9b30; }
+    @media (max-width: 991px) {
+      .style-c .bento-grid { grid-template-columns: 1fr 1fr; }
+      .style-c .bento-span-3 { grid-column: 1 / -1; }
+      .style-c .feature-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 575px) {
+      .style-c .bento-grid { grid-template-columns: 1fr; }
+      .style-c .bento-span-2 { grid-column: 1; }
+      .style-c .gallery-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ================================================================
+       STYLE D: MAGAZINE IMMERSIVE (Editorial)
+       ================================================================ */
+    .style-d { background: #ffffff; }
+    .style-d .style-banner { background: #fff; }
+    .style-d .style-banner h2 { color: #1a1a1a; }
+    .style-d .style-banner p { color: #888; }
+    .style-d .style-banner .style-tag { background: #1a1a1a; color: #fff; }
+
+    .style-d .magazine-hero {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 100%);
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+    .style-d .magazine-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('assets/img/projets/ChatBox.png') center/cover no-repeat;
+      opacity: 0.15;
+    }
+    .style-d .magazine-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 60px 20px;
+      max-width: 800px;
+    }
+    .style-d .magazine-hero h1 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .style-d .magazine-hero .lead {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.8);
+      font-weight: 400;
+    }
+    .style-d .magazine-meta-bar {
+      background: #f8f8f8;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 20px 0;
+    }
+    .style-d .magazine-meta-bar .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .style-d .meta-item { text-align: center; }
+    .style-d .meta-item .meta-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .style-d .meta-item .meta-value { font-size: 0.95rem; color: #333; font-weight: 600; }
+    .style-d .magazine-body {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 50px 20px 60px;
+    }
+    .style-d .magazine-section { margin-bottom: 50px; }
+    .style-d .magazine-section h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    .style-d .magazine-section h3::after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background: #bf9b30;
+      margin-top: 12px;
+    }
+    .style-d .magazine-section p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #444;
+    }
+    .style-d .metrics-grid {
+      display: flex;
+      justify-content: space-between;
+      gap: 0;
+      margin: 30px 0;
+      border-top: 2px solid #1a1a1a;
+      border-bottom: 2px solid #1a1a1a;
+      padding: 24px 0;
+    }
+    .style-d .metric-card {
+      text-align: center;
+      flex: 1;
+      background: none;
+      padding: 0 16px;
+      border-right: 1px solid #e5e5e5;
+    }
+    .style-d .metric-card:last-child { border-right: none; }
+    .style-d .metric-value { font-size: 2.8rem; font-weight: 800; color: #1a1a1a; margin-bottom: 4px; }
+    .style-d .metric-label { font-size: 0.8rem; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+    .style-d .gallery-strip {
+      margin: 30px -20px;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding: 0 20px 10px;
+      scrollbar-width: thin;
+    }
+    .style-d .gallery-strip::-webkit-scrollbar { height: 6px; }
+    .style-d .gallery-strip::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+    .style-d .gallery-item {
+      flex: 0 0 280px;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .style-d .gallery-item:hover { transform: scale(1.02); }
+    .style-d .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .style-d .feature-list { list-style: none; padding: 0; }
+    .style-d .feature-list li {
+      padding: 14px 0;
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.7;
+      border-bottom: 1px solid #f0f0f0;
+      padding-left: 0;
+      position: relative;
+    }
+    .style-d .feature-list li::before {
+      content: none;
+    }
+    .style-d .feature-list li .feature-num {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: #bf9b30;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 28px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-right: 12px;
+    }
+    .style-d .challenge-card {
+      background: #fff;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 20px 0;
+      margin-bottom: 0;
+      border-radius: 0;
+      border-left: none;
+    }
+    .style-d .challenge-card h5 { color: #1a1a1a; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .style-d .challenge-card h5 i { color: #bf9b30; }
+    .style-d .challenge-card p { color: #666; margin-bottom: 0; line-height: 1.7; }
+    .style-d .result-card {
+      background: #fff;
+      border: none;
+      border-bottom: 1px solid #f0f0f0;
+      padding: 20px 0;
+      margin-bottom: 0;
+      border-radius: 0;
+      border-left: none;
+    }
+    .style-d .result-card h5 { color: #1a1a1a; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px; }
+    .style-d .result-card h5 i { color: #28a745; }
+    .style-d .result-card p { color: #666; margin-bottom: 0; line-height: 1.7; }
+    .style-d .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .style-d .tech-detail-box {
+      padding: 20px;
+      border: 1px solid #e5e5e5;
+      border-radius: 4px;
+    }
+    .style-d .tech-detail-box h6 { font-weight: 700; margin-bottom: 10px; font-size: 0.9rem; color: #1a1a1a; }
+    .style-d .tech-detail-box ul { padding-left: 18px; margin-bottom: 0; color: #555; }
+    .style-d .project-nav {
+      max-width: 760px;
+      margin: 0 auto 60px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #1a1a1a;
+    }
+    .style-d .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a1a1a;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .style-d .project-nav a:hover { color: #bf9b30; }
+    @media (max-width: 575px) {
+      .style-d .magazine-hero h1 { font-size: 2rem; }
+      .style-d .magazine-meta-bar .container { gap: 16px; }
+      .style-d .tech-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ================================================================
+       STYLE E: NEON DEV (Developer Theme)
+       ================================================================ */
+    .style-e { background: #0a0a0f; }
+    .style-e .style-banner { background: #0a0a0f; }
+    .style-e .style-banner h2 { color: #fff; }
+    .style-e .style-banner p { color: #777; }
+    .style-e .style-banner .style-tag {
+      background: transparent;
+      border: 1px solid #00d4ff;
+      color: #00d4ff;
+      box-shadow: 0 0 8px rgba(0,212,255,0.3);
+    }
+
+    .style-e .project-header {
+      background: #0a0a0f;
+      padding: 60px 0 40px;
+      margin-bottom: 40px;
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(90deg, #00d4ff, #bf9b30, #00d4ff) 1;
+    }
+    .style-e .project-header h1 {
+      font-family: 'Fira Code', monospace;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .style-e .project-header h1 .neon-accent { color: #00d4ff; }
+    .style-e .project-header .lead {
+      font-family: 'Fira Code', monospace;
+      font-size: 1rem;
+      color: #666;
+    }
+    .style-e .project-header .lead::before { content: "// "; color: #00d4ff; }
+    .style-e .project-sidebar {
+      background: #12121a;
+      border: 1px solid rgba(0,212,255,0.15);
+      border-radius: 12px;
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+    }
+    .style-e .project-sidebar h4 {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #00d4ff;
+      border-bottom: 1px solid rgba(0,212,255,0.2);
+      padding-bottom: 10px;
+    }
+    .style-e .project-info-item {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .style-e .project-info-item:last-child { border-bottom: none; margin-bottom: 0; }
+    .style-e .project-info-label {
+      font-family: 'Fira Code', monospace;
+      font-weight: 500;
+      color: #00d4ff;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .style-e .project-info-label::before { content: "$ "; opacity: 0.5; }
+    .style-e .project-info-value {
+      font-size: 0.95rem;
+      color: #ccc;
+      font-weight: 400;
+    }
+    .style-e .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .style-e .tech-badge {
+      font-family: 'Fira Code', monospace;
+      background: transparent;
+      border: 1px solid #00d4ff;
+      color: #00d4ff;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .style-e .tech-badge:hover {
+      background: rgba(0,212,255,0.1);
+      box-shadow: 0 0 12px rgba(0,212,255,0.3);
+      transform: translateY(-2px);
+    }
+    .style-e .project-content {
+      background: #12121a;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 25px 40px 40px;
+      margin-bottom: 30px;
+      transition: border-color 0.3s ease;
+    }
+    .style-e .project-content:hover {
+      border-color: rgba(0,212,255,0.15);
+    }
+    .style-e .project-content h3 {
+      font-family: 'Fira Code', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #fff;
+      position: relative;
+      padding-left: 20px;
+    }
+    .style-e .project-content h3::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 70%;
+      background: #00d4ff;
+      border-radius: 2px;
+      box-shadow: 0 0 8px rgba(0,212,255,0.5);
+    }
+    .style-e .project-content p { color: #999; line-height: 1.8; }
+    .style-e .feature-list { list-style: none; padding: 0; }
+    .style-e .feature-list li {
+      font-family: 'Fira Code', monospace;
+      padding: 8px 0 8px 0;
+      font-size: 0.9rem;
+      color: #aaa;
+      line-height: 1.7;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      position: relative;
+    }
+    .style-e .feature-list li::before {
+      content: "> ";
+      color: #00d4ff;
+      font-weight: 700;
+      width: auto;
+      height: auto;
+      background: none;
+      border-radius: 0;
+      position: relative;
+      display: inline;
+      top: auto;
+      left: auto;
+    }
+    .style-e .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .style-e .gallery-item {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .style-e .gallery-item:hover {
+      border-color: #00d4ff;
+      box-shadow: 0 0 20px rgba(0,212,255,0.2);
+    }
+    .style-e .gallery-item img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .style-e .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .style-e .metric-card {
+      background: #0a0a0f;
+      border: 1px solid rgba(0,212,255,0.2);
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .style-e .metric-card:hover {
+      border-color: #00d4ff;
+      box-shadow: 0 0 15px rgba(0,212,255,0.15);
+    }
+    .style-e .metric-value {
+      font-family: 'Fira Code', monospace;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #00d4ff;
+      margin-bottom: 5px;
+      text-shadow: 0 0 10px rgba(0,212,255,0.3);
+    }
+    .style-e .metric-label { font-size: 0.85rem; color: #666; }
+    .style-e .team-members { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 15px; }
+    .style-e .team-member {
+      background: rgba(0,212,255,0.05);
+      border: 1px solid rgba(0,212,255,0.15);
+      padding: 8px 16px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ccc;
+      font-size: 0.9rem;
+    }
+    .style-e .team-member i { color: #00d4ff; }
+    .style-e .challenge-card {
+      background: rgba(191,155,48,0.06);
+      border-left: 3px solid #bf9b30;
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .style-e .challenge-card h5 { color: #bf9b30; font-size: 1rem; margin-bottom: 8px; }
+    .style-e .challenge-card p { color: #888; margin-bottom: 0; }
+    .style-e .result-card {
+      background: rgba(0,212,255,0.04);
+      border-left: 3px solid #00d4ff;
+      padding: 18px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+    .style-e .result-card h5 { color: #00d4ff; font-size: 1rem; margin-bottom: 8px; }
+    .style-e .result-card p { color: #888; margin-bottom: 0; }
+    .style-e .project-nav {
+      background: #12121a;
+      border: 1px solid rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .style-e .project-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #00d4ff;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    .style-e .project-nav a:hover { text-shadow: 0 0 8px rgba(0,212,255,0.5); }
+    .style-e .tech-detail-box {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 8px;
+      background: #0a0a0f;
+    }
+    .style-e .tech-detail-box h6 {
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #00d4ff;
+      font-size: 0.85rem;
+    }
+    .style-e .tech-detail-box ul { padding-left: 18px; margin-bottom: 0; color: #888; font-size: 0.9rem; }
+    .style-e .btn-dark { background: #00d4ff; border-color: #00d4ff; color: #0a0a0f; font-family: 'Fira Code', monospace; font-size: 0.85rem; }
+    .style-e .btn-dark:hover { background: #00b8d9; box-shadow: 0 0 12px rgba(0,212,255,0.3); }
+    .style-e .badge.bg-success { background-color: #00d4ff !important; }
+    @media (max-width: 991px) {
+      .style-e .project-sidebar { position: relative; top: 0; margin-bottom: 30px; }
+      .style-e .project-content { padding: 25px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       STICKY STYLE SELECTOR BAR
+       ============================================================ -->
+  <nav class="style-selector" id="style-selector">
+    <span class="label">Choisis un style :</span>
+    <a href="#section-current" class="current" data-target="section-current">Actuel</a>
+    <a href="#section-a" data-target="section-a">A. Noir Elegance</a>
+    <a href="#section-b" data-target="section-b">B. Clean Minimal</a>
+    <a href="#section-c" data-target="section-c">C. Bento Grid</a>
+    <a href="#section-d" data-target="section-d">D. Magazine</a>
+    <a href="#section-e" data-target="section-e">E. Neon Dev</a>
+  </nav>
+
+
+  <!-- ============================================================
+       STYLE 0: ACTUEL (reference)
+       ============================================================ -->
+  <section class="style-section style-current" id="section-current">
+    <div class="style-banner">
+      <span class="style-tag">Reference</span>
+      <h2>Style Actuel</h2>
+      <p>Le style actuellement utilise sur les pages de detail. Gradient violet, sidebar + contenu a droite, cartes blanches, accent dore.</p>
+    </div>
+
+    <div class="project-header">
+      <div class="container">
+        <h1><i class="bi bi-chat-dots-fill me-3"></i>ClassCord - Client de messagerie interoperable</h1>
+        <p class="lead">Client Java Swing pour plateforme de messagerie instantanee en reseau local</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="project-sidebar">
+            <h4><i class="bi bi-info-circle me-2"></i>Informations du Projet</h4>
+            <div class="project-info-item">
+              <span class="project-info-label">Periode</span>
+              <span class="project-info-value">16-21 mai 2025 (5 jours intensifs)</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Type</span>
+              <span class="project-info-value">Projet academique - BTS SIO SLAM</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Equipe</span>
+              <div class="team-members">
+                <div class="team-member"><i class="bi bi-person-fill"></i><span>Yanis ADIDI (Lead Dev)</span></div>
+                <div class="team-member"><i class="bi bi-person"></i><span>Etudiants SISR</span></div>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Technologies</span>
+              <div class="tech-stack">
+                <span class="tech-badge">Java 11+</span>
+                <span class="tech-badge">Swing</span>
+                <span class="tech-badge">Socket TCP</span>
+                <span class="tech-badge">MVC</span>
+                <span class="tech-badge">JSON</span>
+                <span class="tech-badge">Maven</span>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Code Source</span>
+              <a href="#" class="btn btn-dark btn-sm w-100 mt-2"><i class="bi bi-github me-2"></i>Voir sur GitHub</a>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Statut</span>
+              <span class="badge bg-success">Termine et Deploye</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="project-content">
+            <h3>Vue d'ensemble</h3>
+            <p>ClassCord est un client de messagerie instantanee developpe en Java Swing, concu pour permettre aux professeurs et etudiants de communiquer en temps reel sur le reseau local de l'etablissement. Le client se connecte a un serveur de chat existant via une adresse IP et un port configurables.</p>
+            <div class="metrics-grid">
+              <div class="metric-card"><div class="metric-value">5</div><div class="metric-label">Jours de dev</div></div>
+              <div class="metric-card"><div class="metric-value">8</div><div class="metric-label">Fonctionnalites</div></div>
+              <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Modes connexion</div></div>
+              <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Fonctionnel</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Captures d'ecran</h3>
+            <div class="gallery-grid">
+              <div class="gallery-item"><a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="g0"><img src="assets/img/projets/ChatBox.png" alt="Interface principale"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="g0"><img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="g0"><img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invite"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="g0"><img src="assets/img/projets/ChatMsg.png" alt="Messagerie"></a></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Fonctionnalites principales</h3>
+            <ul class="feature-list">
+              <li>Connexion a un serveur distant via IP et port configurables</li>
+              <li>Trois modes de connexion : invite, connexion rapide, compte utilisateur</li>
+              <li>Affichage des messages du canal global en temps reel</li>
+              <li>Envoi et reception de messages prives</li>
+              <li>Gestion des etats utilisateurs (disponible, absent, invisible)</li>
+            </ul>
+          </div>
+          <div class="project-content">
+            <h3>Defis techniques</h3>
+            <div class="challenge-card">
+              <h5><i class="bi bi-exclamation-triangle me-2"></i>Programmation Reseau en Java</h5>
+              <p>Implementation de communications TCP/IP avec gestion des sockets et threads reseau separes pour la reception asynchrone.</p>
+            </div>
+            <div class="challenge-card">
+              <h5><i class="bi bi-exclamation-triangle me-2"></i>Architecture MVC Sans Framework</h5>
+              <p>Conception d'une architecture MVC personnalisee implementee manuellement, separant Model, View et Controller.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Resultats</h3>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Competences Cles Mobilisees</h5>
+              <p>Maitrise de la modelisation, architecture logicielle, programmation reseau et interface graphique Java Swing.</p>
+            </div>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Methodologie Iterative</h5>
+              <p>Projet complet realise en 5 jours avec planification, developpement progressif et deploiement fonctionnel.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Stack Technique</h3>
+            <div class="row g-3">
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-code-square me-2"></i>Langage & Plateforme</h6><ul><li>Java 11+</li><li>Swing pour interface graphique</li><li>Sockets TCP</li></ul></div></div>
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-palette me-2"></i>Architecture</h6><ul><li>MVC (implementation manuelle)</li><li>Threads reseau separes</li><li>Serialisation JSON</li></ul></div></div>
+            </div>
+          </div>
+          <div class="project-nav">
+            <div></div>
+            <a href="#"><i class="bi bi-grid me-2"></i>Tous les projets</a>
+            <a href="#"><span>Projet suivant</span><i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STYLE A: NOIR ELEGANCE
+       ============================================================ -->
+  <section class="style-section style-a" id="section-a">
+    <div class="style-banner">
+      <span class="style-tag">Style A</span>
+      <h2>Noir Elegance</h2>
+      <p>Dark mode premium avec effet verre depoli (frosted glass), accent dore, ombres subtiles. Inspire du mode sombre Apple.</p>
+    </div>
+
+    <div class="project-header">
+      <div class="container">
+        <h1><i class="bi bi-chat-dots-fill me-3"></i>ClassCord - Client de messagerie interoperable</h1>
+        <p class="lead">Client Java Swing pour plateforme de messagerie instantanee en reseau local</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="project-sidebar">
+            <h4><i class="bi bi-info-circle me-2"></i>Informations du Projet</h4>
+            <div class="project-info-item">
+              <span class="project-info-label">Periode</span>
+              <span class="project-info-value">16-21 mai 2025 (5 jours intensifs)</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Type</span>
+              <span class="project-info-value">Projet academique - BTS SIO SLAM</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Equipe</span>
+              <div class="team-members">
+                <div class="team-member"><i class="bi bi-person-fill"></i><span>Yanis ADIDI (Lead Dev)</span></div>
+                <div class="team-member"><i class="bi bi-person"></i><span>Etudiants SISR</span></div>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Technologies</span>
+              <div class="tech-stack">
+                <span class="tech-badge">Java 11+</span>
+                <span class="tech-badge">Swing</span>
+                <span class="tech-badge">Socket TCP</span>
+                <span class="tech-badge">MVC</span>
+                <span class="tech-badge">JSON</span>
+                <span class="tech-badge">Maven</span>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Code Source</span>
+              <a href="#" class="btn btn-dark btn-sm w-100 mt-2"><i class="bi bi-github me-2"></i>Voir sur GitHub</a>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Statut</span>
+              <span class="badge bg-success">Termine et Deploye</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="project-content">
+            <h3>Vue d'ensemble</h3>
+            <p>ClassCord est un client de messagerie instantanee developpe en Java Swing, concu pour permettre aux professeurs et etudiants de communiquer en temps reel sur le reseau local de l'etablissement. Le client se connecte a un serveur de chat existant via une adresse IP et un port configurables.</p>
+            <div class="metrics-grid">
+              <div class="metric-card"><div class="metric-value">5</div><div class="metric-label">Jours de dev</div></div>
+              <div class="metric-card"><div class="metric-value">8</div><div class="metric-label">Fonctionnalites</div></div>
+              <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Modes connexion</div></div>
+              <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Fonctionnel</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Captures d'ecran</h3>
+            <div class="gallery-grid">
+              <div class="gallery-item"><a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="gA"><img src="assets/img/projets/ChatBox.png" alt="Interface principale"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="gA"><img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="gA"><img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invite"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="gA"><img src="assets/img/projets/ChatMsg.png" alt="Messagerie"></a></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Fonctionnalites principales</h3>
+            <ul class="feature-list">
+              <li>Connexion a un serveur distant via IP et port configurables</li>
+              <li>Trois modes de connexion : invite, connexion rapide, compte utilisateur</li>
+              <li>Affichage des messages du canal global en temps reel</li>
+              <li>Envoi et reception de messages prives</li>
+              <li>Gestion des etats utilisateurs (disponible, absent, invisible)</li>
+            </ul>
+          </div>
+          <div class="project-content">
+            <h3>Defis techniques</h3>
+            <div class="challenge-card">
+              <h5><i class="bi bi-exclamation-triangle me-2"></i>Programmation Reseau en Java</h5>
+              <p>Implementation de communications TCP/IP avec gestion des sockets et threads reseau separes pour la reception asynchrone.</p>
+            </div>
+            <div class="challenge-card">
+              <h5><i class="bi bi-exclamation-triangle me-2"></i>Architecture MVC Sans Framework</h5>
+              <p>Conception d'une architecture MVC personnalisee implementee manuellement, separant Model, View et Controller.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Resultats</h3>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Competences Cles Mobilisees</h5>
+              <p>Maitrise de la modelisation, architecture logicielle, programmation reseau et interface graphique Java Swing.</p>
+            </div>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Methodologie Iterative</h5>
+              <p>Projet complet realise en 5 jours avec planification, developpement progressif et deploiement fonctionnel.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Stack Technique</h3>
+            <div class="row g-3">
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-code-square me-2"></i>Langage & Plateforme</h6><ul><li>Java 11+</li><li>Swing pour interface graphique</li><li>Sockets TCP</li></ul></div></div>
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-palette me-2"></i>Architecture</h6><ul><li>MVC (implementation manuelle)</li><li>Threads reseau separes</li><li>Serialisation JSON</li></ul></div></div>
+            </div>
+          </div>
+          <div class="project-nav">
+            <div></div>
+            <a href="#"><i class="bi bi-grid me-2"></i>Tous les projets</a>
+            <a href="#"><span>Projet suivant</span><i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STYLE B: CLEAN MINIMAL
+       ============================================================ -->
+  <section class="style-section style-b" id="section-b">
+    <div class="style-banner">
+      <span class="style-tag">Style B</span>
+      <h2>Clean Minimal</h2>
+      <p>Design suisse, zero gradient, bordures fines, grande typographie. Flat, professionnel, editorial.</p>
+    </div>
+
+    <div class="project-header">
+      <div class="container">
+        <h1><i class="bi bi-chat-dots-fill me-3"></i>ClassCord - Client de messagerie interoperable</h1>
+        <p class="lead">Client Java Swing pour plateforme de messagerie instantanee en reseau local</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="project-sidebar">
+            <h4>Informations du Projet</h4>
+            <div class="project-info-item">
+              <span class="project-info-label">Periode</span>
+              <span class="project-info-value">16-21 mai 2025 (5 jours intensifs)</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Type</span>
+              <span class="project-info-value">Projet academique - BTS SIO SLAM</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Equipe</span>
+              <div class="team-members">
+                <div class="team-member"><i class="bi bi-person-fill"></i><span>Yanis ADIDI (Lead Dev)</span></div>
+                <div class="team-member"><i class="bi bi-person"></i><span>Etudiants SISR</span></div>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Technologies</span>
+              <div class="tech-stack">
+                <span class="tech-badge">Java 11+</span>
+                <span class="tech-badge">Swing</span>
+                <span class="tech-badge">Socket TCP</span>
+                <span class="tech-badge">MVC</span>
+                <span class="tech-badge">JSON</span>
+                <span class="tech-badge">Maven</span>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Code Source</span>
+              <a href="#" class="btn btn-dark btn-sm w-100 mt-2"><i class="bi bi-github me-2"></i>Voir sur GitHub</a>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Statut</span>
+              <span class="badge bg-success">Termine et Deploye</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="project-content">
+            <h3>Vue d'ensemble</h3>
+            <p>ClassCord est un client de messagerie instantanee developpe en Java Swing, concu pour permettre aux professeurs et etudiants de communiquer en temps reel sur le reseau local de l'etablissement. Le client se connecte a un serveur de chat existant via une adresse IP et un port configurables.</p>
+            <div class="metrics-grid">
+              <div class="metric-card"><div class="metric-value">5</div><div class="metric-label">Jours de dev</div></div>
+              <div class="metric-card"><div class="metric-value">8</div><div class="metric-label">Fonctionnalites</div></div>
+              <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Modes connexion</div></div>
+              <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Fonctionnel</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Captures d'ecran</h3>
+            <div class="gallery-grid">
+              <div class="gallery-item"><a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="gB"><img src="assets/img/projets/ChatBox.png" alt="Interface principale"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="gB"><img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="gB"><img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invite"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="gB"><img src="assets/img/projets/ChatMsg.png" alt="Messagerie"></a></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Fonctionnalites principales</h3>
+            <ul class="feature-list">
+              <li>Connexion a un serveur distant via IP et port configurables</li>
+              <li>Trois modes de connexion : invite, connexion rapide, compte utilisateur</li>
+              <li>Affichage des messages du canal global en temps reel</li>
+              <li>Envoi et reception de messages prives</li>
+              <li>Gestion des etats utilisateurs (disponible, absent, invisible)</li>
+            </ul>
+          </div>
+          <div class="project-content">
+            <h3>Defis techniques</h3>
+            <div class="challenge-card">
+              <h5><i class="bi bi-exclamation-triangle me-2"></i>Programmation Reseau en Java</h5>
+              <p>Implementation de communications TCP/IP avec gestion des sockets et threads reseau separes pour la reception asynchrone.</p>
+            </div>
+            <div class="challenge-card">
+              <h5><i class="bi bi-exclamation-triangle me-2"></i>Architecture MVC Sans Framework</h5>
+              <p>Conception d'une architecture MVC personnalisee implementee manuellement, separant Model, View et Controller.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Resultats</h3>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Competences Cles Mobilisees</h5>
+              <p>Maitrise de la modelisation, architecture logicielle, programmation reseau et interface graphique Java Swing.</p>
+            </div>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Methodologie Iterative</h5>
+              <p>Projet complet realise en 5 jours avec planification, developpement progressif et deploiement fonctionnel.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>Stack Technique</h3>
+            <div class="row g-3">
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-code-square me-2"></i>Langage & Plateforme</h6><ul><li>Java 11+</li><li>Swing pour interface graphique</li><li>Sockets TCP</li></ul></div></div>
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-palette me-2"></i>Architecture</h6><ul><li>MVC (implementation manuelle)</li><li>Threads reseau separes</li><li>Serialisation JSON</li></ul></div></div>
+            </div>
+          </div>
+          <div class="project-nav">
+            <div></div>
+            <a href="#"><i class="bi bi-grid me-2"></i>Tous les projets</a>
+            <a href="#"><span>Projet suivant</span><i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STYLE C: BENTO GRID (Different HTML structure)
+       ============================================================ -->
+  <section class="style-section style-c" id="section-c">
+    <div class="style-banner">
+      <span class="style-tag">Style C</span>
+      <h2>Bento Grid</h2>
+      <p>Layout CSS Grid asymetrique inspire des pages promo Apple. Info projet eclatee en cellules, galerie pleine largeur, look moderne et dynamique.</p>
+    </div>
+
+    <div class="bento-grid">
+      <!-- Header cell -->
+      <div class="bento-cell bento-header">
+        <h1><i class="bi bi-chat-dots-fill me-3"></i>ClassCord</h1>
+        <p class="lead">Client Java Swing pour plateforme de messagerie instantanee en reseau local</p>
+      </div>
+
+      <!-- Metric cells -->
+      <div class="bento-cell accent-cell">
+        <h4>Duree</h4>
+        <div class="big-value">5 jours</div>
+        <div class="sub-value">Developpement intensif</div>
+      </div>
+      <div class="bento-cell gold-cell">
+        <h4>Fonctionnalites</h4>
+        <div class="big-value">8</div>
+        <div class="sub-value">Features implementees</div>
+      </div>
+      <div class="bento-cell accent-cell">
+        <h4>Connexion</h4>
+        <div class="big-value">3 modes</div>
+        <div class="sub-value">Invite, rapide, compte</div>
+      </div>
+      <div class="bento-cell gold-cell">
+        <h4>Statut</h4>
+        <div class="big-value">100%</div>
+        <div class="sub-value">Fonctionnel et deploye</div>
+      </div>
+
+      <!-- Info cells -->
+      <div class="bento-cell bento-span-2">
+        <h4>A propos</h4>
+        <p style="color: #555; line-height: 1.7; margin: 0;">ClassCord est un client de messagerie instantanee developpe en Java Swing, concu pour permettre aux professeurs et etudiants de communiquer en temps reel sur le reseau local de l'etablissement.</p>
+      </div>
+      <div class="bento-cell">
+        <h4>Equipe</h4>
+        <div class="team-members">
+          <div class="team-member"><i class="bi bi-person-fill"></i><span>Yanis ADIDI</span></div>
+          <div class="team-member"><i class="bi bi-person"></i><span>Etudiants SISR</span></div>
+        </div>
+      </div>
+      <div class="bento-cell">
+        <h4>Technologies</h4>
+        <div class="tech-stack">
+          <span class="tech-badge">Java 11+</span>
+          <span class="tech-badge">Swing</span>
+          <span class="tech-badge">TCP</span>
+          <span class="tech-badge">MVC</span>
+          <span class="tech-badge">JSON</span>
+        </div>
+      </div>
+
+      <!-- Gallery cell -->
+      <div class="bento-cell bento-gallery bento-span-4">
+        <h3><i class="bi bi-images me-2"></i>Captures d'ecran</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item"><a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="gC"><img src="assets/img/projets/ChatBox.png" alt="Interface principale"></a></div>
+          <div class="gallery-item"><a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="gC"><img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion"></a></div>
+          <div class="gallery-item"><a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="gC"><img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invite"></a></div>
+          <div class="gallery-item"><a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="gC"><img src="assets/img/projets/ChatMsg.png" alt="Messagerie"></a></div>
+        </div>
+      </div>
+
+      <!-- Features cell -->
+      <div class="bento-cell bento-features bento-span-4">
+        <h3><i class="bi bi-check2-all me-2"></i>Fonctionnalites principales</h3>
+        <ul class="feature-list">
+          <li>Connexion a un serveur distant via IP et port configurables</li>
+          <li>Trois modes de connexion : invite, connexion rapide, compte utilisateur</li>
+          <li>Affichage des messages du canal global en temps reel</li>
+          <li>Envoi et reception de messages prives</li>
+          <li>Gestion des etats utilisateurs (disponible, absent, invisible)</li>
+          <li>Interface conviviale et fluide avec Java Swing</li>
+        </ul>
+      </div>
+
+      <!-- Challenges & Results cells -->
+      <div class="bento-cell bento-challenges bento-span-2">
+        <h3><i class="bi bi-exclamation-triangle me-2"></i>Defis techniques</h3>
+        <div class="challenge-card">
+          <h5>Programmation Reseau en Java</h5>
+          <p>Communications TCP/IP avec gestion des sockets et threads reseau separes.</p>
+        </div>
+        <div class="challenge-card">
+          <h5>Architecture MVC Sans Framework</h5>
+          <p>Architecture MVC personnalisee separant Model, View et Controller.</p>
+        </div>
+      </div>
+      <div class="bento-cell bento-results bento-span-2">
+        <h3><i class="bi bi-check-circle me-2"></i>Resultats</h3>
+        <div class="result-card">
+          <h5>Competences Cles Mobilisees</h5>
+          <p>Modelisation, architecture logicielle, programmation reseau et interface graphique.</p>
+        </div>
+        <div class="result-card">
+          <h5>Methodologie Iterative</h5>
+          <p>Projet complet en 5 jours avec deploiement fonctionnel.</p>
+        </div>
+      </div>
+
+      <!-- Nav cell -->
+      <div class="project-nav">
+        <div></div>
+        <a href="#"><i class="bi bi-grid me-2"></i>Tous les projets</a>
+        <a href="#"><span>Projet suivant</span><i class="bi bi-arrow-right ms-2"></i></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STYLE D: MAGAZINE IMMERSIVE (Different HTML structure)
+       ============================================================ -->
+  <section class="style-section style-d" id="section-d">
+    <div class="style-banner">
+      <span class="style-tag">Style D</span>
+      <h2>Magazine Immersive</h2>
+      <p>Layout colonne unique, hero plein ecran avec screenshot en fond, contenu centre style case-study / Medium article. Experience de lecture editoriale.</p>
+    </div>
+
+    <!-- Hero -->
+    <div class="magazine-hero">
+      <div class="magazine-hero-content">
+        <h1>ClassCord</h1>
+        <p class="lead">Client Java Swing pour plateforme de messagerie instantanee en reseau local</p>
+      </div>
+    </div>
+
+    <!-- Meta bar -->
+    <div class="magazine-meta-bar">
+      <div class="container">
+        <div class="meta-item">
+          <span class="meta-label">Periode</span>
+          <span class="meta-value">Mai 2025 (5 jours)</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Type</span>
+          <span class="meta-value">BTS SIO SLAM</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Role</span>
+          <span class="meta-value">Lead Dev</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Equipe</span>
+          <span class="meta-value">2 personnes</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Statut</span>
+          <span class="meta-value">Termine</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="magazine-body">
+      <div class="magazine-section">
+        <h3>Vue d'ensemble</h3>
+        <p>ClassCord est un client de messagerie instantanee developpe en Java Swing, concu pour permettre aux professeurs et etudiants de communiquer en temps reel sur le reseau local de l'etablissement. Le client se connecte a un serveur de chat existant via une adresse IP et un port configurables, offrant une interface fluide et reactive.</p>
+        <p>Le projet mobilise les competences en modelisation, architecture logicielle, programmation reseau et interface graphique, suivant une methodologie de projet iterative par etapes.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card"><div class="metric-value">5</div><div class="metric-label">Jours de dev</div></div>
+        <div class="metric-card"><div class="metric-value">8</div><div class="metric-label">Fonctionnalites</div></div>
+        <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Modes connexion</div></div>
+        <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Fonctionnel</div></div>
+      </div>
+
+      <div class="magazine-section">
+        <h3>Captures d'ecran</h3>
+      </div>
+      <div class="gallery-strip">
+        <div class="gallery-item"><a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="gD"><img src="assets/img/projets/ChatBox.png" alt="Interface principale"></a></div>
+        <div class="gallery-item"><a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="gD"><img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion"></a></div>
+        <div class="gallery-item"><a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="gD"><img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invite"></a></div>
+        <div class="gallery-item"><a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="gD"><img src="assets/img/projets/ChatMsg.png" alt="Messagerie"></a></div>
+      </div>
+
+      <div class="magazine-section">
+        <h3>Fonctionnalites principales</h3>
+        <ul class="feature-list">
+          <li><span class="feature-num">1</span>Connexion a un serveur distant via IP et port configurables</li>
+          <li><span class="feature-num">2</span>Trois modes de connexion : invite, connexion rapide, compte utilisateur</li>
+          <li><span class="feature-num">3</span>Affichage des messages du canal global en temps reel</li>
+          <li><span class="feature-num">4</span>Envoi et reception de messages prives</li>
+          <li><span class="feature-num">5</span>Gestion des etats utilisateurs (disponible, absent, invisible)</li>
+        </ul>
+      </div>
+
+      <div class="magazine-section">
+        <h3>Defis techniques</h3>
+        <div class="challenge-card">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Programmation Reseau en Java</h5>
+          <p>Implementation de communications TCP/IP avec gestion des sockets et threads reseau separes pour la reception asynchrone des messages.</p>
+        </div>
+        <div class="challenge-card">
+          <h5><i class="bi bi-exclamation-triangle me-2"></i>Architecture MVC Sans Framework</h5>
+          <p>Conception d'une architecture MVC personnalisee implementee manuellement, separant Model, View et Controller.</p>
+        </div>
+      </div>
+
+      <div class="magazine-section">
+        <h3>Resultats</h3>
+        <div class="result-card">
+          <h5><i class="bi bi-check-circle me-2"></i>Competences Cles Mobilisees</h5>
+          <p>Maitrise de la modelisation, architecture logicielle, programmation reseau et interface graphique Java Swing.</p>
+        </div>
+        <div class="result-card">
+          <h5><i class="bi bi-check-circle me-2"></i>Methodologie Iterative</h5>
+          <p>Projet complet realise en 5 jours avec planification, developpement progressif et deploiement fonctionnel.</p>
+        </div>
+      </div>
+
+      <div class="magazine-section">
+        <h3>Stack Technique</h3>
+        <div class="tech-grid">
+          <div class="tech-detail-box"><h6><i class="bi bi-code-square me-2"></i>Langage & Plateforme</h6><ul><li>Java 11+</li><li>Swing pour interface graphique</li><li>Sockets TCP</li></ul></div>
+          <div class="tech-detail-box"><h6><i class="bi bi-palette me-2"></i>Architecture</h6><ul><li>MVC (implementation manuelle)</li><li>Threads reseau separes</li><li>Serialisation JSON</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-nav">
+      <div></div>
+      <a href="#"><i class="bi bi-grid me-2"></i>Tous les projets</a>
+      <a href="#"><span>Projet suivant</span><i class="bi bi-arrow-right ms-2"></i></a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       STYLE E: NEON DEV
+       ============================================================ -->
+  <section class="style-section style-e" id="section-e">
+    <div class="style-banner">
+      <span class="style-tag">Style E</span>
+      <h2>Neon Dev</h2>
+      <p>Theme developpeur dark avec double accent cyan + dore, typo monospace (Fira Code), feature list style terminal, glow neon au hover. GitHub dark meets cyberpunk.</p>
+    </div>
+
+    <div class="project-header">
+      <div class="container">
+        <h1><span class="neon-accent">&gt;</span> ClassCord <span class="neon-accent">//</span> Messagerie interoperable</h1>
+        <p class="lead">Client Java Swing pour plateforme de messagerie instantanee en reseau local</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="project-sidebar">
+            <h4><i class="bi bi-terminal me-2"></i>project.config</h4>
+            <div class="project-info-item">
+              <span class="project-info-label">Periode</span>
+              <span class="project-info-value">16-21 mai 2025 (5 jours intensifs)</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Type</span>
+              <span class="project-info-value">Projet academique - BTS SIO SLAM</span>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Equipe</span>
+              <div class="team-members">
+                <div class="team-member"><i class="bi bi-person-fill"></i><span>Yanis ADIDI (Lead Dev)</span></div>
+                <div class="team-member"><i class="bi bi-person"></i><span>Etudiants SISR</span></div>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Technologies</span>
+              <div class="tech-stack">
+                <span class="tech-badge">Java 11+</span>
+                <span class="tech-badge">Swing</span>
+                <span class="tech-badge">Socket TCP</span>
+                <span class="tech-badge">MVC</span>
+                <span class="tech-badge">JSON</span>
+                <span class="tech-badge">Maven</span>
+              </div>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Code Source</span>
+              <a href="#" class="btn btn-dark btn-sm w-100 mt-2"><i class="bi bi-github me-2"></i>git clone</a>
+            </div>
+            <div class="project-info-item">
+              <span class="project-info-label">Statut</span>
+              <span class="badge bg-success">deployed</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="project-content">
+            <h3>readme.md</h3>
+            <p>ClassCord est un client de messagerie instantanee developpe en Java Swing, concu pour permettre aux professeurs et etudiants de communiquer en temps reel sur le reseau local de l'etablissement. Le client se connecte a un serveur de chat existant via une adresse IP et un port configurables.</p>
+            <div class="metrics-grid">
+              <div class="metric-card"><div class="metric-value">5</div><div class="metric-label">Jours de dev</div></div>
+              <div class="metric-card"><div class="metric-value">8</div><div class="metric-label">Fonctionnalites</div></div>
+              <div class="metric-card"><div class="metric-value">3</div><div class="metric-label">Modes connexion</div></div>
+              <div class="metric-card"><div class="metric-value">100%</div><div class="metric-label">Fonctionnel</div></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>screenshots/</h3>
+            <div class="gallery-grid">
+              <div class="gallery-item"><a href="assets/img/projets/ChatBox.png" class="glightbox" data-gallery="gE"><img src="assets/img/projets/ChatBox.png" alt="Interface principale"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexion.png" class="glightbox" data-gallery="gE"><img src="assets/img/projets/ChatConnexion.png" alt="Page de connexion"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatConnexionIvt.png" class="glightbox" data-gallery="gE"><img src="assets/img/projets/ChatConnexionIvt.png" alt="Mode invite"></a></div>
+              <div class="gallery-item"><a href="assets/img/projets/ChatMsg.png" class="glightbox" data-gallery="gE"><img src="assets/img/projets/ChatMsg.png" alt="Messagerie"></a></div>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>features.log</h3>
+            <ul class="feature-list">
+              <li>Connexion a un serveur distant via IP et port configurables</li>
+              <li>Trois modes de connexion : invite, connexion rapide, compte utilisateur</li>
+              <li>Affichage des messages du canal global en temps reel</li>
+              <li>Envoi et reception de messages prives</li>
+              <li>Gestion des etats utilisateurs (disponible, absent, invisible)</li>
+            </ul>
+          </div>
+          <div class="project-content">
+            <h3>challenges.log</h3>
+            <div class="challenge-card">
+              <h5><i class="bi bi-bug me-2"></i>Programmation Reseau en Java</h5>
+              <p>Implementation de communications TCP/IP avec gestion des sockets et threads reseau separes pour la reception asynchrone.</p>
+            </div>
+            <div class="challenge-card">
+              <h5><i class="bi bi-bug me-2"></i>Architecture MVC Sans Framework</h5>
+              <p>Conception d'une architecture MVC personnalisee implementee manuellement, separant Model, View et Controller.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>results.md</h3>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Competences Cles Mobilisees</h5>
+              <p>Maitrise de la modelisation, architecture logicielle, programmation reseau et interface graphique Java Swing.</p>
+            </div>
+            <div class="result-card">
+              <h5><i class="bi bi-check-circle me-2"></i>Methodologie Iterative</h5>
+              <p>Projet complet realise en 5 jours avec planification, developpement progressif et deploiement fonctionnel.</p>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3>tech-stack.json</h3>
+            <div class="row g-3">
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-code-square me-2"></i>runtime</h6><ul><li>Java 11+</li><li>Swing pour interface graphique</li><li>Sockets TCP</li></ul></div></div>
+              <div class="col-md-6"><div class="tech-detail-box"><h6><i class="bi bi-diagram-3 me-2"></i>architecture</h6><ul><li>MVC (implementation manuelle)</li><li>Threads reseau separes</li><li>Serialisation JSON</li></ul></div></div>
+            </div>
+          </div>
+          <div class="project-nav">
+            <div></div>
+            <a href="#"><i class="bi bi-grid me-2"></i>ls ../projets/</a>
+            <a href="#"><span>cd next/</span><i class="bi bi-arrow-right ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <script>
+    // Init AOS
+    AOS.init({ duration: 600, once: true });
+
+    // Init GLightbox
+    GLightbox({ selector: '.glightbox' });
+
+    // Smooth scroll & active state for selector buttons
+    const selectorBar = document.getElementById('style-selector');
+    const selectorLinks = selectorBar.querySelectorAll('a[data-target]');
+
+    selectorLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetId = this.getAttribute('data-target');
+        var target = document.getElementById(targetId);
+        if (target) {
+          var offset = selectorBar.offsetHeight + 10;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Update active button on scroll
+    var sections = [];
+    selectorLinks.forEach(function(link) {
+      var id = link.getAttribute('data-target');
+      var el = document.getElementById(id);
+      if (el) sections.push({ id: id, el: el, link: link });
+    });
+
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.pageYOffset + selectorBar.offsetHeight + 60;
+      var current = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].el.offsetTop <= scrollPos) {
+          current = sections[i];
+        }
+      }
+      selectorLinks.forEach(function(l) { l.classList.remove('current'); });
+      if (current) current.link.classList.add('current');
+    });
+  </script>
+
+</body>
+</html>

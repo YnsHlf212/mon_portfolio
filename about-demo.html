@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo - Styles À Propos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600&family=Montserrat:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: #1a1a1a; 
+      color: #fff;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #bf9b30;
+    }
+    .subtitle {
+      text-align: center;
+      color: #888;
+      margin-bottom: 60px;
+    }
+    .demo-section {
+      max-width: 900px;
+      margin: 0 auto 80px;
+      padding: 40px;
+      border-radius: 20px;
+    }
+    .demo-label {
+      background: #bf9b30;
+      color: #000;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+
+    /* Style 1 - Élégant Classique */
+    .style-1 {
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+    .style-1 .profile-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+    }
+    .style-1 .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #bf9b30;
+      box-shadow: 0 10px 30px rgba(191, 155, 48, 0.3);
+      flex-shrink: 0;
+    }
+    .style-1 .profile-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 5px;
+      color: #1a1a1a;
+    }
+    .style-1 .profile-info .title {
+      color: #bf9b30;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    .style-1 .profile-info p {
+      color: #555;
+      line-height: 1.8;
+    }
+    .style-1 .info-list {
+      margin-top: 20px;
+      list-style: none;
+    }
+    .style-1 .info-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .style-1 .info-list li strong {
+      color: #bf9b30;
+      min-width: 80px;
+      display: inline-block;
+    }
+
+    /* Style 2 - Moderne Centré */
+    .style-2 {
+      background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+      color: #1a1a1a;
+      text-align: center;
+    }
+    .style-2 .profile-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid transparent;
+      background: linear-gradient(#fff, #fff) padding-box, linear-gradient(135deg, #bf9b30, #d4a838) border-box;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      margin-bottom: 25px;
+    }
+    .style-2 h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .style-2 .title {
+      color: #bf9b30;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .style-2 .bio {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #666;
+      line-height: 1.8;
+    }
+    .style-2 .info-badges {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .style-2 .info-badge {
+      background: #f0f0f0;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+    }
+    .style-2 .info-badge i {
+      color: #bf9b30;
+      margin-right: 8px;
+    }
+
+    /* Style 3 - Card Moderne */
+    .style-3 {
+      background: #fff;
+      color: #1a1a1a;
+      padding: 0;
+      overflow: hidden;
+    }
+    .style-3 .card-header {
+      background: linear-gradient(135deg, #bf9b30 0%, #d4a838 100%);
+      padding: 50px 40px;
+      text-align: center;
+    }
+    .style-3 .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    .style-3 .card-header h3 {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    .style-3 .card-header .title {
+      color: rgba(255,255,255,0.9);
+      font-size: 1rem;
+    }
+    .style-3 .card-body {
+      padding: 40px;
+    }
+    .style-3 .card-body p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+    .style-3 .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .style-3 .info-item {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .style-3 .info-item label {
+      font-size: 0.8rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .style-3 .info-item span {
+      display: block;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    /* Style 4 - Minimaliste Épuré */
+    .style-4 {
+      background: #fff;
+      color: #1a1a1a;
+    }
+    .style-4 .profile-row {
+      display: flex;
+      gap: 50px;
+      align-items: center;
+    }
+    .style-4 .profile-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    }
+    .style-4 .profile-content {
+      flex: 1;
+    }
+    .style-4 h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .style-4 .title {
+      color: #bf9b30;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .style-4 .divider {
+      width: 60px;
+      height: 3px;
+      background: #bf9b30;
+      margin-bottom: 20px;
+    }
+    .style-4 p {
+      color: #666;
+      line-height: 1.9;
+      font-size: 1.05rem;
+    }
+    .style-4 .contact-row {
+      margin-top: 25px;
+      display: flex;
+      gap: 30px;
+    }
+    .style-4 .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #333;
+    }
+    .style-4 .contact-item i {
+      color: #bf9b30;
+      font-size: 1.2rem;
+    }
+
+    /* Style 5 - Dark Premium */
+    .style-5 {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: #fff;
+      border: 1px solid rgba(191, 155, 48, 0.3);
+    }
+    .style-5 .profile-flex {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    .style-5 .profile-photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #bf9b30;
+      box-shadow: 0 0 40px rgba(191, 155, 48, 0.3);
+    }
+    .style-5 h3 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      color: #bf9b30;
+      margin-bottom: 5px;
+    }
+    .style-5 .title {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .style-5 p {
+      color: #aaa;
+      line-height: 1.8;
+    }
+    .style-5 .info-list {
+      margin-top: 25px;
+      list-style: none;
+    }
+    .style-5 .info-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      gap: 15px;
+    }
+    .style-5 .info-list li i {
+      color: #bf9b30;
+    }
+    .style-5 .info-list li span {
+      color: #fff;
+    }
+
+    /* Style 6 - Split Layout */
+    .style-6 {
+      background: #fff;
+      color: #1a1a1a;
+      padding: 0;
+      display: flex;
+      overflow: hidden;
+    }
+    .style-6 .left-panel {
+      background: #f5f5f5;
+      padding: 50px;
+      text-align: center;
+      width: 40%;
+    }
+    .style-6 .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #bf9b30;
+      margin-bottom: 20px;
+    }
+    .style-6 .left-panel h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .style-6 .left-panel .title {
+      color: #bf9b30;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+    .style-6 .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .style-6 .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #bf9b30;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s;
+    }
+    .style-6 .social-links a:hover {
+      transform: scale(1.1);
+    }
+    .style-6 .right-panel {
+      padding: 50px;
+      flex: 1;
+    }
+    .style-6 .right-panel h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem;
+      color: #bf9b30;
+      margin-bottom: 15px;
+    }
+    .style-6 .right-panel p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+    .style-6 .info-item {
+      display: flex;
+      margin-bottom: 12px;
+    }
+    .style-6 .info-item strong {
+      min-width: 100px;
+      color: #1a1a1a;
+    }
+    .style-6 .info-item span {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Styles "À Propos"</h1>
+  <p class="subtitle">Choisis le style qui correspond le mieux à ton portfolio</p>
+
+  <!-- Style 1 -->
+  <div class="demo-section style-1">
+    <span class="demo-label">Style 1 - Élégant Classique</span>
+    <div class="profile-container">
+      <img src="assets/img/Profile.png" alt="Profile" class="profile-photo">
+      <div class="profile-info">
+        <h3>Yanis ADIDI</h3>
+        <div class="title">Développeur Web et Application</div>
+        <p>Actuellement étudiant en BTS SIO, spécialité SLAM, je poursuis ma formation en alternance au sein du groupe Orange. Passionné par l'informatique et le développement depuis mon plus jeune âge.</p>
+        <ul class="info-list">
+          <li><strong>Email</strong> yanis.adidi@mediaschool.me</li>
+          <li><strong>Formation</strong> BTS SIO SLAM</li>
+          <li><strong>Entreprise</strong> Orange</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style 2 -->
+  <div class="demo-section style-2">
+    <span class="demo-label">Style 2 - Moderne Centré</span>
+    <img src="assets/img/Profile.png" alt="Profile" class="profile-photo">
+    <h3>Yanis ADIDI</h3>
+    <div class="title">Développeur Web et Application</div>
+    <p class="bio">Actuellement étudiant en BTS SIO, spécialité SLAM, je poursuis ma formation en alternance au sein du groupe Orange. Passionné par l'informatique et le développement depuis mon plus jeune âge.</p>
+    <div class="info-badges">
+      <span class="info-badge"><i class="bi bi-envelope"></i> yanis.adidi@mediaschool.me</span>
+      <span class="info-badge"><i class="bi bi-mortarboard"></i> BTS SIO SLAM</span>
+      <span class="info-badge"><i class="bi bi-building"></i> Orange</span>
+    </div>
+  </div>
+
+  <!-- Style 3 -->
+  <div class="demo-section style-3">
+    <span class="demo-label" style="position: absolute; margin: 20px;">Style 3 - Card Moderne</span>
+    <div class="card-header">
+      <img src="assets/img/Profile.png" alt="Profile" class="profile-photo">
+      <h3>Yanis ADIDI</h3>
+      <div class="title">Développeur Web et Application</div>
+    </div>
+    <div class="card-body">
+      <p>Actuellement étudiant en BTS SIO, spécialité SLAM, je poursuis ma formation en alternance au sein du groupe Orange. Passionné par l'informatique et le développement depuis mon plus jeune âge, j'ai à cœur de transformer cette passion en expertise professionnelle.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <label>Email</label>
+          <span>yanis.adidi@mediaschool.me</span>
+        </div>
+        <div class="info-item">
+          <label>Formation</label>
+          <span>BTS SIO SLAM</span>
+        </div>
+        <div class="info-item">
+          <label>Entreprise</label>
+          <span>Orange</span>
+        </div>
+        <div class="info-item">
+          <label>Localisation</label>
+          <span>Nice, France</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style 4 -->
+  <div class="demo-section style-4">
+    <span class="demo-label">Style 4 - Minimaliste Épuré</span>
+    <div class="profile-row">
+      <img src="assets/img/Profile.png" alt="Profile" class="profile-photo">
+      <div class="profile-content">
+        <h3>Yanis ADIDI</h3>
+        <span class="title">Développeur Web et Application</span>
+        <div class="divider"></div>
+        <p>Actuellement étudiant en BTS SIO, spécialité SLAM, je poursuis ma formation en alternance au sein du groupe Orange. Passionné par l'informatique et le développement depuis mon plus jeune âge.</p>
+        <div class="contact-row">
+          <div class="contact-item">
+            <i class="bi bi-envelope"></i>
+            <span>yanis.adidi@mediaschool.me</span>
+          </div>
+          <div class="contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Nice, France</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style 5 -->
+  <div class="demo-section style-5">
+    <span class="demo-label">Style 5 - Dark Premium</span>
+    <div class="profile-flex">
+      <img src="assets/img/Profile.png" alt="Profile" class="profile-photo">
+      <div>
+        <h3>Yanis ADIDI</h3>
+        <span class="title">Développeur Web et Application</span>
+        <p>Actuellement étudiant en BTS SIO, spécialité SLAM, je poursuis ma formation en alternance au sein du groupe Orange. Passionné par l'informatique et le développement.</p>
+        <ul class="info-list">
+          <li><i class="bi bi-envelope"></i> <span>yanis.adidi@mediaschool.me</span></li>
+          <li><i class="bi bi-mortarboard"></i> <span>BTS SIO SLAM - IRIS Mediaschool</span></li>
+          <li><i class="bi bi-building"></i> <span>Alternance chez Orange</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Style 6 -->
+  <div class="demo-section style-6">
+    <div class="left-panel">
+      <span class="demo-label" style="margin-bottom: 30px;">Style 6</span>
+      <img src="assets/img/Profile.png" alt="Profile" class="profile-photo">
+      <h3>Yanis ADIDI</h3>
+      <div class="title">Développeur Web et Application</div>
+      <div class="social-links">
+        <a href="#"><i class="bi bi-linkedin"></i></a>
+        <a href="#"><i class="bi bi-github"></i></a>
+        <a href="#"><i class="bi bi-envelope"></i></a>
+      </div>
+    </div>
+    <div class="right-panel">
+      <h4>À propos</h4>
+      <p>Actuellement étudiant en BTS SIO, spécialité SLAM, je poursuis ma formation en alternance au sein du groupe Orange. Passionné par l'informatique et le développement depuis mon plus jeune âge, j'ai à cœur de transformer cette passion en expertise professionnelle.</p>
+      <h4>Informations</h4>
+      <div class="info-item"><strong>Email</strong> <span>yanis.adidi@mediaschool.me</span></div>
+      <div class="info-item"><strong>Formation</strong> <span>BTS SIO SLAM</span></div>
+      <div class="info-item"><strong>Entreprise</strong> <span>Orange</span></div>
+      <div class="info-item"><strong>Localisation</strong> <span>Nice, France</span></div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Demo - Yanis ADIDI</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800;900&family=Work+Sans:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Lato:wght@300;400;700;900&family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700;800;900&family=Archivo:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700;800;900&family=Righteous&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: white;
+      font-family: system-ui, sans-serif;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .header p {
+      font-size: 16px;
+      opacity: 0.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .font-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .font-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-5px);
+    }
+
+    .font-name {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .name-display {
+      font-size: 56px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 15px;
+      text-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+
+    .font-category {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 15px;
+      font-style: italic;
+    }
+
+    /* Font Families */
+    .font-space-grotesk { font-family: 'Space Grotesk', sans-serif; letter-spacing: -2px; }
+    .font-inter { font-family: 'Inter', sans-serif; letter-spacing: -1px; }
+    .font-poppins { font-family: 'Poppins', sans-serif; }
+    .font-montserrat { font-family: 'Montserrat', sans-serif; letter-spacing: -1px; }
+    .font-playfair { font-family: 'Playfair Display', serif; letter-spacing: 0px; }
+    .font-bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 3px; }
+    .font-oswald { font-family: 'Oswald', sans-serif; letter-spacing: 2px; }
+    .font-raleway { font-family: 'Raleway', sans-serif; letter-spacing: -1px; }
+    .font-work-sans { font-family: 'Work Sans', sans-serif; }
+    .font-roboto { font-family: 'Roboto', sans-serif; }
+    .font-lato { font-family: 'Lato', sans-serif; }
+    .font-outfit { font-family: 'Outfit', sans-serif; letter-spacing: -1px; }
+    .font-syne { font-family: 'Syne', sans-serif; letter-spacing: -2px; }
+    .font-dm-sans { font-family: 'DM Sans', sans-serif; }
+    .font-quicksand { font-family: 'Quicksand', sans-serif; }
+    .font-barlow { font-family: 'Barlow', sans-serif; letter-spacing: 1px; }
+    .font-archivo { font-family: 'Archivo', sans-serif; letter-spacing: -1px; }
+    .font-manrope { font-family: 'Manrope', sans-serif; }
+    .font-orbitron { font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
+    .font-exo { font-family: 'Exo 2', sans-serif; }
+    .font-righteous { font-family: 'Righteous', sans-serif; letter-spacing: 1px; }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .name-display {
+        font-size: 40px;
+      }
+    }
+
+    .scroll-hint {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.2);
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Choisis ta police</h1>
+    <p>21 options modernes pour ton nom</p>
+  </div>
+
+  <div class="grid">
+    
+    <!-- Option 1 -->
+    <div class="font-card">
+      <div class="font-name">Space Grotesk (Actuelle)</div>
+      <div class="name-display font-space-grotesk">Yanis ADIDI</div>
+      <div class="font-category">Geometric - Tech - Moderne</div>
+    </div>
+
+    <!-- Option 2 -->
+    <div class="font-card">
+      <div class="font-name">Inter</div>
+      <div class="name-display font-inter">Yanis ADIDI</div>
+      <div class="font-category">Clean - Professional - Versatile</div>
+    </div>
+
+    <!-- Option 3 -->
+    <div class="font-card">
+      <div class="font-name">Poppins</div>
+      <div class="name-display font-poppins">Yanis ADIDI</div>
+      <div class="font-category">Rounded - Friendly - Popular</div>
+    </div>
+
+    <!-- Option 4 -->
+    <div class="font-card">
+      <div class="font-name">Montserrat</div>
+      <div class="name-display font-montserrat">Yanis ADIDI</div>
+      <div class="font-category">Bold - Urban - Strong</div>
+    </div>
+
+    <!-- Option 5 -->
+    <div class="font-card">
+      <div class="font-name">Playfair Display</div>
+      <div class="name-display font-playfair">Yanis ADIDI</div>
+      <div class="font-category">Serif - Elegant - Luxury</div>
+    </div>
+
+    <!-- Option 6 -->
+    <div class="font-card">
+      <div class="font-name">Bebas Neue</div>
+      <div class="name-display font-bebas">YANIS ADIDI</div>
+      <div class="font-category">Condensed - Impact - Display</div>
+    </div>
+
+    <!-- Option 7 -->
+    <div class="font-card">
+      <div class="font-name">Oswald</div>
+      <div class="name-display font-oswald">YANIS ADIDI</div>
+      <div class="font-category">Tall - Strong - Editorial</div>
+    </div>
+
+    <!-- Option 8 -->
+    <div class="font-card">
+      <div class="font-name">Raleway</div>
+      <div class="name-display font-raleway">Yanis ADIDI</div>
+      <div class="font-category">Elegant - Thin - Sophisticated</div>
+    </div>
+
+    <!-- Option 9 -->
+    <div class="font-card">
+      <div class="font-name">Work Sans</div>
+      <div class="name-display font-work-sans">Yanis ADIDI</div>
+      <div class="font-category">Neutral - Corporate - Reliable</div>
+    </div>
+
+    <!-- Option 10 -->
+    <div class="font-card">
+      <div class="font-name">Roboto</div>
+      <div class="name-display font-roboto">Yanis ADIDI</div>
+      <div class="font-category">Material - Android - Tech</div>
+    </div>
+
+    <!-- Option 11 -->
+    <div class="font-card">
+      <div class="font-name">Lato</div>
+      <div class="name-display font-lato">Yanis ADIDI</div>
+      <div class="font-category">Humanist - Warm - Classic</div>
+    </div>
+
+    <!-- Option 12 -->
+    <div class="font-card">
+      <div class="font-name">Outfit</div>
+      <div class="name-display font-outfit">Yanis ADIDI</div>
+      <div class="font-category">Rounded - Modern - Fresh</div>
+    </div>
+
+    <!-- Option 13 -->
+    <div class="font-card">
+      <div class="font-name">Syne</div>
+      <div class="name-display font-syne">Yanis ADIDI</div>
+      <div class="font-category">Sharp - Contemporary - Bold</div>
+    </div>
+
+    <!-- Option 14 -->
+    <div class="font-card">
+      <div class="font-name">DM Sans</div>
+      <div class="name-display font-dm-sans">Yanis ADIDI</div>
+      <div class="font-category">Low Contrast - Readable - Clean</div>
+    </div>
+
+    <!-- Option 15 -->
+    <div class="font-card">
+      <div class="font-name">Quicksand</div>
+      <div class="name-display font-quicksand">Yanis ADIDI</div>
+      <div class="font-category">Rounded - Gentle - Approachable</div>
+    </div>
+
+    <!-- Option 16 -->
+    <div class="font-card">
+      <div class="font-name">Barlow</div>
+      <div class="name-display font-barlow">Yanis ADIDI</div>
+      <div class="font-category">Wide - Open - Spacious</div>
+    </div>
+
+    <!-- Option 17 -->
+    <div class="font-card">
+      <div class="font-name">Archivo</div>
+      <div class="name-display font-archivo">Yanis ADIDI</div>
+      <div class="font-category">Grotesque - Sturdy - Functional</div>
+    </div>
+
+    <!-- Option 18 -->
+    <div class="font-card">
+      <div class="font-name">Manrope</div>
+      <div class="name-display font-manrope">Yanis ADIDI</div>
+      <div class="font-category">Geometric - Minimal - Modern</div>
+    </div>
+
+    <!-- Option 19 -->
+    <div class="font-card">
+      <div class="font-name">Orbitron</div>
+      <div class="name-display font-orbitron">YANIS ADIDI</div>
+      <div class="font-category">Futuristic - Tech - Sci-Fi</div>
+    </div>
+
+    <!-- Option 20 -->
+    <div class="font-card">
+      <div class="font-name">Exo 2</div>
+      <div class="name-display font-exo">Yanis ADIDI</div>
+      <div class="font-category">Technological - Dynamic - Modern</div>
+    </div>
+
+    <!-- Option 21 -->
+    <div class="font-card">
+      <div class="font-name">Righteous</div>
+      <div class="name-display font-righteous">Yanis ADIDI</div>
+      <div class="font-category">Bold - Retro - Fun</div>
+    </div>
+
+  </div>
+
+  <div class="scroll-hint">↓ Scroll pour voir toutes les options ↓</div>
+
+</body>
+</html>
