@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>ENT - Portfolio Yanis ADIDI</title>
+  <title>RoomBooking - Portfolio Yanis ADIDI</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -28,7 +28,7 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
-/* Style Clean Minimal — Flat & Typographic */
+/* Style Clean Minimal */
     .project-header {
       background: #ffffff;
       padding: 80px 0 40px;
@@ -346,6 +346,33 @@
       font-size: 0.9rem;
     }
 
+    .role-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .role-table th {
+      background: #f8f8f8;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+      border-bottom: 2px solid #e5e5e5;
+    }
+
+    .role-table td {
+      padding: 8px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      color: #555;
+    }
+
+    .role-table tr:last-child td { border-bottom: none; }
+
+    .role-table .check { color: #6bc98f; font-weight: 700; }
+    .role-table .cross { color: #ccc; }
+
     @media (max-width: 991px) {
       .project-sidebar {
         position: relative;
@@ -398,15 +425,11 @@
 
   <main class="main">
 
-
-  <main class="main">
-
-    <!-- Projet 3: ENT -->
-    <section id="portfolio-details-3" class="py-0 mb-5">
-      <div class="project-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);" data-aos="fade-down">
+    <section id="portfolio-details-roombooking" class="py-0 mb-5">
+      <div class="project-header" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);" data-aos="fade-down">
         <div class="container">
-          <h1><i class="bi bi-journal-text me-3"></i>ENT Prof/Élève</h1>
-          <p class="lead">Plateforme de gestion scolaire pour la consultation et l'administration des notes</p>
+          <h1><i class="bi bi-calendar-check me-3"></i>RoomBooking</h1>
+          <p class="lead">Application web Symfony de réservation de salles</p>
         </div>
       </div>
 
@@ -415,20 +438,20 @@
           <div class="col-lg-4 mb-4">
             <div class="project-sidebar">
               <h4><i class="bi bi-info-circle me-2"></i>Informations du Projet</h4>
-              
-              <div class="project-info-item">
-                <span class="project-info-label">Période</span>
-                <span class="project-info-value">Février - Mai 2025</span>
-              </div>
 
               <div class="project-info-item">
-                <span class="project-info-label">Durée</span>
-                <span class="project-info-value">3 mois</span>
+                <span class="project-info-label">Période</span>
+                <span class="project-info-value">2025-2026</span>
               </div>
 
               <div class="project-info-item">
                 <span class="project-info-label">Type</span>
-                <span class="project-info-value">Projet de fin d'année</span>
+                <span class="project-info-value">Projet scolaire individuel</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Contexte</span>
+                <span class="project-info-value">BTS SIO - MediaSchool IRIS Nice</span>
               </div>
 
               <div class="project-info-item">
@@ -444,24 +467,23 @@
               <div class="project-info-item">
                 <span class="project-info-label">Technologies</span>
                 <div class="tech-stack">
-                  <span class="tech-badge">Java</span>
-                  <span class="tech-badge">Swing</span>
-                  <span class="tech-badge">JDBC</span>
-                  <span class="tech-badge">MySQL</span>
-                  <span class="tech-badge">MVC</span>
+                  <span class="tech-badge">PHP 8.2</span>
+                  <span class="tech-badge">Symfony 7.3</span>
+                  <span class="tech-badge">Doctrine ORM 3.6</span>
+                  <span class="tech-badge">MySQL / MariaDB</span>
+                  <span class="tech-badge">Twig 3</span>
+                  <span class="tech-badge">JavaScript vanilla</span>
                 </div>
               </div>
 
               <div class="project-info-item">
-                <span class="project-info-label">Code Source</span>
-                <a href="https://github.com/YnsHlf212/ENT-" target="_blank" class="btn btn-dark btn-sm w-100 mt-2">
-                  <i class="bi bi-github me-2"></i>Voir sur GitHub
-                </a>
+                <span class="project-info-label">Base de données</span>
+                <span class="project-info-value">MySQL 10.11 (MariaDB)</span>
               </div>
 
               <div class="project-info-item">
                 <span class="project-info-label">Statut</span>
-                <span class="badge bg-success">✓ Opérationnel</span>
+                <span class="badge bg-success">Opérationnel</span>
               </div>
             </div>
           </div>
@@ -470,126 +492,246 @@
             <div class="project-content">
               <h3>Vue d'ensemble</h3>
               <p>
-                Application de gestion scolaire développée pour faciliter la consultation et l'administration 
-                des notes. Les élèves peuvent consulter leurs résultats, moyennes et commentaires après authentification, 
-                tandis que les professeurs disposent d'outils pour gérer les matières, saisir les notes et suivre 
-                la progression de leurs élèves.
+                RoomBooking est une application web de réservation de salles développée avec Symfony 7.3.
+                Elle permet aux étudiants et coordinateurs de réserver des salles équipées, avec un système
+                de détection de conflits de créneaux, une gestion fine des rôles (étudiant, coordinateur, admin)
+                et un dashboard statistique pour les administrateurs.
               </p>
 
               <div class="metrics-grid">
-                <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                  <div class="metric-value">3</div>
-                  <div class="metric-label">Mois de dev</div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">5</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Entités Doctrine</div>
                 </div>
-                <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                  <div class="metric-value">2</div>
-                  <div class="metric-label">Types d'utilisateurs</div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">3</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Niveaux de rôles</div>
                 </div>
-                <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                  <div class="metric-value">15+</div>
-                  <div class="metric-label">Matières gérées</div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">10+</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Bundles Symfony</div>
                 </div>
-                <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                  <div class="metric-value">2800+</div>
-                  <div class="metric-label">Lignes de code</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <h3>Captures d'écran</h3>
-              <div class="gallery-grid">
-                <div class="gallery-item">
-                  <a href="assets/img/projets/ENTLogin.png" class="glightbox" data-gallery="ent-gallery">
-                    <img src="assets/img/projets/ENTLogin.png" alt="Connexion">
-                  </a>
-                </div>
-                <div class="gallery-item">
-                  <a href="assets/img/projets/ENTStudent.png" class="glightbox" data-gallery="ent-gallery">
-                    <img src="assets/img/projets/ENTStudent.png" alt="Interface élève">
-                  </a>
-                </div>
-                <div class="gallery-item">
-                  <a href="assets/img/projets/ENTTeacher.png" class="glightbox" data-gallery="ent-gallery">
-                    <img src="assets/img/projets/ENTTeacher.png" alt="Interface professeur">
-                  </a>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">M2M</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Relations complexes</div>
                 </div>
               </div>
             </div>
 
             <div class="project-content">
-              <h3>Fonctionnalités</h3>
-              
-              <h5 class="mt-4 mb-3"><i class="bi bi-person-check me-2 text-primary"></i>Espace Élève</h5>
+              <h3>Modèle de données</h3>
+              <p>L'application repose sur 5 entités Doctrine avec des relations complexes :</p>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>User</h6>
+                    <ul>
+                      <li>email, firstName, lastName</li>
+                      <li>password (hashé bcrypt)</li>
+                      <li>roles (JSON)</li>
+                      <li>promotion (FK)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Reservation</h6>
+                    <ul>
+                      <li>room (FK), owner (FK User)</li>
+                      <li>bookedFor (FK User)</li>
+                      <li>startDatetime / endDatetime</li>
+                      <li>createdAt / cancelledAt</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Room</h6>
+                    <ul>
+                      <li>name, capacity, description</li>
+                      <li>isActive</li>
+                      <li>equipments (M2M)</li>
+                      <li>reservations (1TM)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Equipment / Promotion</h6>
+                    <ul>
+                      <li>Equipment : name, description, rooms (M2M)</li>
+                      <li>Promotion : name, users (1TM)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3>Gestion des rôles et accès</h3>
+              <table class="role-table">
+                <thead>
+                  <tr>
+                    <th>Fonctionnalité</th>
+                    <th>Étudiant</th>
+                    <th>Coordinateur</th>
+                    <th>Admin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Voir les salles</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Créer / modifier / annuler sa réservation</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Gérer toutes les réservations</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Créer / modifier une salle</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Gérer les utilisateurs</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Zone coordinateur</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Dashboard statistiques</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="project-content">
+              <h3>Fonctionnalités principales</h3>
+
+              <h5 class="mt-4 mb-3"><i class="bi bi-shield-lock me-2 text-primary"></i>Authentification et Sécurité</h5>
               <ul class="feature-list">
-                <li>Consultation des notes par matière et par période</li>
-                <li>Visualisation des moyennes générales et par matière</li>
-                <li>Accès aux commentaires des professeurs</li>
-                <li>Historique complet des évaluations</li>
+                <li>Authentification form_login Symfony avec protection CSRF stateless</li>
+                <li>Hashage bcrypt automatique des mots de passe</li>
+                <li>Hiérarchie de rôles avec contrôle d'accès granulaire</li>
               </ul>
 
-              <h5 class="mt-4 mb-3"><i class="bi bi-person-badge me-2 text-success"></i>Espace Professeur</h5>
+              <h5 class="mt-4 mb-3"><i class="bi bi-calendar-check me-2 text-success"></i>Réservation intelligente</h5>
               <ul class="feature-list">
-                <li>Gestion des matières et des classes</li>
-                <li>Saisie et modification des notes</li>
-                <li>Ajout de commentaires personnalisés</li>
-                <li>Vue détaillée des résultats par élève</li>
-                <li>Export des données pour analyses</li>
+                <li>Détection de conflits de réservation par requête DQL personnalisée (chevauchement de créneaux)</li>
+                <li>Validation côté serveur (Symfony Validator) et côté client (JS vanilla)</li>
+                <li>Interdiction de réserver dans le passé, date de fin après date de début</li>
+                <li>Envoi d'email de confirmation via Symfony Mailer avec template HTML</li>
+              </ul>
+
+              <h5 class="mt-4 mb-3"><i class="bi bi-speedometer2 me-2 text-warning"></i>Dashboard et Interface</h5>
+              <ul class="feature-list">
+                <li>Dashboard personnalisé par rôle : stats admin, réservations à venir et historique</li>
+                <li>Recherche temps réel sur les tableaux (filtre JS client-side)</li>
+                <li>Interface responsive avec menu hamburger mobile</li>
+                <li>Flash messages avec disparition automatique (4s)</li>
               </ul>
             </div>
 
             <div class="project-content">
               <h3>Aspects Techniques</h3>
-              
+
               <div class="challenge-card">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Sécurité & Authentification</h5>
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Détection de conflits de créneaux</h5>
                 <p>
-                  Mise en place d'un système d'authentification robuste avec hashage des mots de passe 
-                  et gestion des sessions sécurisées pour protéger les données sensibles.
+                  Requête DQL personnalisée avec logique de chevauchement (start &lt; end ET end &gt; start),
+                  exclusion de la réservation en cours d'édition pour éviter les faux conflits.
                 </p>
               </div>
 
               <div class="challenge-card">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Base de Données Relationnelle</h5>
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Relations complexes Doctrine</h5>
                 <p>
-                  Conception d'un schéma de base de données normalisé avec relations entre utilisateurs, 
-                  matières, notes et commentaires, optimisé pour les requêtes fréquentes.
+                  Relations Many-to-Many (Room &#8596; Equipment), One-to-Many (Promotion &#8594; Users, Room &#8594; Reservations),
+                  gestion de la suppression avec garde-fous (promotion avec étudiants, salle avec réservations actives).
                 </p>
               </div>
 
               <div class="challenge-card">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Gestion des Rôles</h5>
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Migrations et DataFixtures</h5>
                 <p>
-                  Implémentation d'un système de permissions différencié permettant un contrôle d'accès 
-                  précis selon le profil utilisateur (élève/professeur).
+                  Versionnage du schéma BDD via Doctrine Migrations. Jeu de données de développement complet
+                  via DataFixtures (admin, coordinateur, étudiant, salles, équipements, promotion, réservation test).
                 </p>
               </div>
             </div>
 
             <div class="project-content">
+              <h3>Stack technique détaillée</h3>
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Back-end</h6>
+                    <ul>
+                      <li>Symfony 7.3 (Security, Form, Validator, Mailer)</li>
+                      <li>Doctrine ORM 3.6, DBAL 4, Migrations</li>
+                      <li>Twig 3.x + twig/extra-bundle</li>
+                      <li>PHP 8.2+, Composer, Symfony Flex</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Front-end</h6>
+                    <ul>
+                      <li>CSS custom (variables CSS, responsive mobile)</li>
+                      <li>JavaScript vanilla (validation dates, recherche temps réel)</li>
+                      <li>Menu mobile, auto-dismiss flash messages</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
               <h3>Apprentissages Clés</h3>
-              
+
               <div class="result-card">
-                <h5><i class="bi bi-check-circle me-2"></i>Architecture CRUD</h5>
+                <h5><i class="bi bi-check-circle me-2"></i>Framework Symfony</h5>
                 <p>
-                  Maîtrise des opérations Create, Read, Update, Delete et de leur implémentation 
-                  dans une application orientée base de données.
+                  Maîtrise de l'écosystème Symfony : bundles, services, sécurité, formulaires,
+                  validation, envoi d'emails et gestion multi-environnements (.env).
                 </p>
               </div>
 
               <div class="result-card">
-                <h5><i class="bi bi-check-circle me-2"></i>Conception UX/UI</h5>
+                <h5><i class="bi bi-check-circle me-2"></i>ORM Doctrine</h5>
                 <p>
-                  Développement d'interfaces utilisateur distinctes adaptées aux besoins spécifiques 
-                  de chaque type d'utilisateur (élève vs professeur).
+                  Conception d'entités avec relations complexes (M2M, 1TM), requêtes DQL personnalisées,
+                  migrations automatiques et fixtures de développement.
                 </p>
               </div>
 
               <div class="result-card">
-                <h5><i class="bi bi-check-circle me-2"></i>Modélisation de Données</h5>
+                <h5><i class="bi bi-check-circle me-2"></i>Sécurité applicative</h5>
                 <p>
-                  Conception d'un modèle de données cohérent représentant les entités du monde scolaire 
-                  et leurs relations complexes.
+                  Implémentation d'un système de rôles hiérarchique, protection CSRF,
+                  hashage de mots de passe et contrôle d'accès granulaire par route.
                 </p>
               </div>
             </div>
@@ -598,17 +740,14 @@
 
         <!-- Navigation entre projets -->
         <div class="project-nav" data-aos="fade-up">
-          <a href="portfolio-classcord.html" class="prev">
+          <a href="portfolio-main-stock.html" class="prev">
             <i class="bi bi-arrow-left"></i>
             <span>Projet précédent</span>
           </a>
           <a href="portfolio-projets.html" class="btn btn-outline-primary">
             <i class="bi bi-grid me-2"></i>Tous les projets
           </a>
-          <a href="portfolio-mediastock.html" class="next">
-            <span>Projet suivant</span>
-            <i class="bi bi-arrow-right"></i>
-          </a>
+          <div></div>
         </div>
       </div>
     </section>
