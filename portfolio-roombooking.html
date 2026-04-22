@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Urban Marginal - Portfolio Yanis ADIDI</title>
+  <title>RoomBooking - Portfolio Yanis ADIDI</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -28,7 +28,7 @@
   <link href="main.css" rel="stylesheet">
 
   <style>
-        /* Style Clean Minimal — Flat & Typographic */
+/* Style Clean Minimal */
     .project-header {
       background: #ffffff;
       padding: 80px 0 40px;
@@ -346,6 +346,33 @@
       font-size: 0.9rem;
     }
 
+    .role-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .role-table th {
+      background: #f8f8f8;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+      border-bottom: 2px solid #e5e5e5;
+    }
+
+    .role-table td {
+      padding: 8px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      color: #555;
+    }
+
+    .role-table tr:last-child td { border-bottom: none; }
+
+    .role-table .check { color: #6bc98f; font-weight: 700; }
+    .role-table .cross { color: #ccc; }
+
     @media (max-width: 991px) {
       .project-sidebar {
         position: relative;
@@ -381,11 +408,11 @@
             <a href="portfolio-projets.html" class="active"><span>Projets</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="portfolio-classcord.html">ClassCord</a></li>
-              <li><a href="portfolio-urban-marginal.html">Urban Marginal</a></li>
               <li><a href="portfolio-ent.html">ENT</a></li>
               <li><a href="portfolio-mediastock.html">MediaStock</a></li>
               <li><a href="portfolio-obsilock.html">ObsiLock</a></li>
               <li><a href="portfolio-main-stock.html">Main-Stock</a></li>
+              <li><a href="portfolio-roombooking.html">RoomBooking</a></li>
             </ul>
           </li>
           <li><a href="portfolio-projets.html#tableau-synthese">Tableau de synthèse</a></li>
@@ -398,15 +425,11 @@
 
   <main class="main">
 
-
-  <main class="main">
-
-    <!-- Projet 2: Mini Jeu -->
-    <section id="portfolio-details-2" class="py-0">
-      <div class="project-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);" data-aos="fade-down">
+    <section id="portfolio-details-roombooking" class="py-0 mb-5">
+      <div class="project-header" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);" data-aos="fade-down">
         <div class="container">
-          <h1><i class="bi bi-controller me-3"></i>Urban Marginal - Jeu de Bataille</h1>
-          <p class="lead">Jeu multijoueur en temps réel avec gestion d'arène et système de combat</p>
+          <h1><i class="bi bi-calendar-check me-3"></i>RoomBooking</h1>
+          <p class="lead">Application web Symfony de réservation de salles</p>
         </div>
       </div>
 
@@ -415,20 +438,20 @@
           <div class="col-lg-4 mb-4">
             <div class="project-sidebar">
               <h4><i class="bi bi-info-circle me-2"></i>Informations du Projet</h4>
-              
-              <div class="project-info-item">
-                <span class="project-info-label">Période</span>
-                <span class="project-info-value">Décembre 2024 - Avril 2025</span>
-              </div>
 
               <div class="project-info-item">
-                <span class="project-info-label">Durée</span>
-                <span class="project-info-value">5 mois (développement progressif)</span>
+                <span class="project-info-label">Période</span>
+                <span class="project-info-value">2025-2026</span>
               </div>
 
               <div class="project-info-item">
                 <span class="project-info-label">Type</span>
-                <span class="project-info-value">Projet académique d'innitiation</span>
+                <span class="project-info-value">Projet scolaire individuel</span>
+              </div>
+
+              <div class="project-info-item">
+                <span class="project-info-label">Contexte</span>
+                <span class="project-info-value">BTS SIO - MediaSchool IRIS Nice</span>
               </div>
 
               <div class="project-info-item">
@@ -436,7 +459,7 @@
                 <div class="team-members">
                   <div class="team-member">
                     <i class="bi bi-person-fill"></i>
-                    <span>Yanis ADIDI</span>
+                    <span>Yanis ADIDI (Solo)</span>
                   </div>
                 </div>
               </div>
@@ -444,22 +467,23 @@
               <div class="project-info-item">
                 <span class="project-info-label">Technologies</span>
                 <div class="tech-stack">
-                  <span class="tech-badge">Java</span>
-                  <span class="tech-badge">Swing</span>
-                  <span class="tech-badge">Sockets</span>
+                  <span class="tech-badge">PHP 8.2</span>
+                  <span class="tech-badge">Symfony 7.3</span>
+                  <span class="tech-badge">Doctrine ORM 3.6</span>
+                  <span class="tech-badge">MySQL / MariaDB</span>
+                  <span class="tech-badge">Twig 3</span>
+                  <span class="tech-badge">JavaScript vanilla</span>
                 </div>
               </div>
 
               <div class="project-info-item">
-                <span class="project-info-label">Code Source</span>
-                <a href="https://github.com/YnsHlf212/Urban-Marginal" target="_blank" class="btn btn-dark btn-sm w-100 mt-2">
-                  <i class="bi bi-github me-2"></i>Voir sur GitHub
-                </a>
+                <span class="project-info-label">Base de données</span>
+                <span class="project-info-value">MySQL 10.11 (MariaDB)</span>
               </div>
 
               <div class="project-info-item">
                 <span class="project-info-label">Statut</span>
-                <span class="badge bg-success">✓ Fonctionnel</span>
+                <span class="badge bg-success">Opérationnel</span>
               </div>
             </div>
           </div>
@@ -468,134 +492,262 @@
             <div class="project-content">
               <h3>Vue d'ensemble</h3>
               <p>
-                Urban Marginal est un jeu de bataille multijoueur développé en Java où les joueurs s'affrontent 
-                en temps réel sur une arène. Le jeu intègre un système de chat, un contrôle d'accès par âge (18+), 
-                et permet aux joueurs de personnaliser leur expérience en choisissant leur personnage.
+                RoomBooking est une application web de réservation de salles développée avec Symfony 7.3.
+                Elle permet aux étudiants et coordinateurs de réserver des salles équipées, avec un système
+                de détection de conflits de créneaux, une gestion fine des rôles (étudiant, coordinateur, admin)
+                et un dashboard statistique pour les administrateurs.
               </p>
 
               <div class="metrics-grid">
-                <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                  <div class="metric-value">5</div>
-                  <div class="metric-label">Mois de développement</div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">5</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Entités Doctrine</div>
                 </div>
-                <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                  <div class="metric-value">6</div>
-                  <div class="metric-label">Personnages jouables</div>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">3</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Niveaux de rôles</div>
                 </div>
-              </div>
-            </div>
-
-            <div class="project-content">
-              <h3>Captures d'écran</h3>
-              <div class="gallery-grid">
-                <div class="gallery-item">
-                  <a href="assets/img/projets/UMServeur.png" class="glightbox" data-gallery="game-gallery">
-                    <img src="assets/img/projets/UMServeur.png" alt="Serveur">
-                  </a>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">10+</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Bundles Symfony</div>
                 </div>
-                <div class="gallery-item">
-                  <a href="assets/img/projets/UMPersoChoix.png" class="glightbox" data-gallery="game-gallery">
-                    <img src="assets/img/projets/UMPersoChoix.png" alt="Choix personnage">
-                  </a>
-                </div>
-                <div class="gallery-item">
-                  <a href="assets/img/projets/UMAreneChat.png" class="glightbox" data-gallery="game-gallery">
-                    <img src="assets/img/projets/UMAreneChat.png" alt="Arène de jeu">
-                  </a>
-                </div>
-                <div class="gallery-item">
-                  <a href="assets/img/projets/UM_MVC.png" class="glightbox" data-gallery="game-gallery">
-                    <img src="assets/img/projets/UM_MVC.png" alt="Architecture MVC">
-                  </a>
+                <div class="metric-card" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);">
+                  <div class="metric-value" style="color: #fff;">M2M</div>
+                  <div class="metric-label" style="color: rgba(255,255,255,0.8);">Relations complexes</div>
                 </div>
               </div>
             </div>
 
             <div class="project-content">
-              <h3>Fonctionnalités Principales</h3>
+              <h3>Modèle de données</h3>
+              <p>L'application repose sur 5 entités Doctrine avec des relations complexes :</p>
+
+              <div class="row g-3 mt-2">
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>User</h6>
+                    <ul>
+                      <li>email, firstName, lastName</li>
+                      <li>password (hashé bcrypt)</li>
+                      <li>roles (JSON)</li>
+                      <li>promotion (FK)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Reservation</h6>
+                    <ul>
+                      <li>room (FK), owner (FK User)</li>
+                      <li>bookedFor (FK User)</li>
+                      <li>startDatetime / endDatetime</li>
+                      <li>createdAt / cancelledAt</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Room</h6>
+                    <ul>
+                      <li>name, capacity, description</li>
+                      <li>isActive</li>
+                      <li>equipments (M2M)</li>
+                      <li>reservations (1TM)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="tech-detail-box">
+                    <h6>Equipment / Promotion</h6>
+                    <ul>
+                      <li>Equipment : name, description, rooms (M2M)</li>
+                      <li>Promotion : name, users (1TM)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <h3>Gestion des rôles et accès</h3>
+              <table class="role-table">
+                <thead>
+                  <tr>
+                    <th>Fonctionnalité</th>
+                    <th>Étudiant</th>
+                    <th>Coordinateur</th>
+                    <th>Admin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Voir les salles</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Créer / modifier / annuler sa réservation</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Gérer toutes les réservations</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Créer / modifier une salle</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Gérer les utilisateurs</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Zone coordinateur</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                  <tr>
+                    <td>Dashboard statistiques</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="cross">&#10007;</td>
+                    <td class="check">&#10003;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="project-content">
+              <h3>Fonctionnalités principales</h3>
+
+              <h5 class="mt-4 mb-3"><i class="bi bi-shield-lock me-2 text-primary"></i>Authentification et Sécurité</h5>
               <ul class="feature-list">
-                <li>Système de combat en temps réel avec gestion des collisions</li>
-                <li>Sélection et personnalisation de personnages avec caractéristiques uniques</li>
-                <li>Chat intégré pour la communication entre joueurs pendant les parties</li>
-                <li>Système d'authentification avec vérification d'âge (18+)</li>
-                <li>Interface graphique dynamique et responsive</li>
-                <li>Gestion de l'état du jeu synchronisé entre tous les clients</li>
-                <li>Serveur multijoueur gérant plusieurs connexions simultanées</li>
+                <li>Authentification form_login Symfony avec protection CSRF stateless</li>
+                <li>Hashage bcrypt automatique des mots de passe</li>
+                <li>Hiérarchie de rôles avec contrôle d'accès granulaire</li>
+              </ul>
+
+              <h5 class="mt-4 mb-3"><i class="bi bi-calendar-check me-2 text-success"></i>Réservation intelligente</h5>
+              <ul class="feature-list">
+                <li>Détection de conflits de réservation par requête DQL personnalisée (chevauchement de créneaux)</li>
+                <li>Validation côté serveur (Symfony Validator) et côté client (JS vanilla)</li>
+                <li>Interdiction de réserver dans le passé, date de fin après date de début</li>
+                <li>Envoi d'email de confirmation via Symfony Mailer avec template HTML</li>
+              </ul>
+
+              <h5 class="mt-4 mb-3"><i class="bi bi-speedometer2 me-2 text-warning"></i>Dashboard et Interface</h5>
+              <ul class="feature-list">
+                <li>Dashboard personnalisé par rôle : stats admin, réservations à venir et historique</li>
+                <li>Recherche temps réel sur les tableaux (filtre JS client-side)</li>
+                <li>Interface responsive avec menu hamburger mobile</li>
+                <li>Flash messages avec disparition automatique (4s)</li>
               </ul>
             </div>
 
             <div class="project-content">
-              <h3>Défis Techniques</h3>
-              
+              <h3>Aspects Techniques</h3>
+
               <div class="challenge-card">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Synchronisation du Game State</h5>
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Détection de conflits de créneaux</h5>
                 <p>
-                  Développement d'un système de synchronisation robuste pour maintenir la cohérence 
-                  de l'état du jeu entre tous les joueurs connectés, avec gestion des latences.
+                  Requête DQL personnalisée avec logique de chevauchement (start &lt; end ET end &gt; start),
+                  exclusion de la réservation en cours d'édition pour éviter les faux conflits.
                 </p>
               </div>
 
               <div class="challenge-card">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Logique de Combat</h5>
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Relations complexes Doctrine</h5>
                 <p>
-                  Implémentation d'une logique de combat équitable avec système de points de vie, 
-                  dégâts, et détection de collisions précise.
+                  Relations Many-to-Many (Room &#8596; Equipment), One-to-Many (Promotion &#8594; Users, Room &#8594; Reservations),
+                  gestion de la suppression avec garde-fous (promotion avec étudiants, salle avec réservations actives).
                 </p>
               </div>
 
               <div class="challenge-card">
-                <h5><i class="bi bi-exclamation-triangle me-2"></i>Performance Graphique</h5>
+                <h5><i class="bi bi-exclamation-triangle me-2"></i>Migrations et DataFixtures</h5>
                 <p>
-                  Optimisation du rendu graphique Swing pour maintenir un framerate fluide malgré 
-                  les multiples entités animées simultanément.
+                  Versionnage du schéma BDD via Doctrine Migrations. Jeu de données de développement complet
+                  via DataFixtures (admin, coordinateur, étudiant, salles, équipements, promotion, réservation test).
                 </p>
               </div>
             </div>
 
             <div class="project-content">
-              <h3>Stack Technique</h3>
-              <div class="row g-3">
+              <h3>Stack technique détaillée</h3>
+              <div class="row g-3 mt-2">
                 <div class="col-md-6">
-                  <div class="p-3 border rounded">
-                    <h6 class="fw-bold mb-2"><i class="bi bi-code-square me-2"></i>Game Engine</h6>
-                    <ul class="mb-0" style="padding-left: 20px;">
-                      <li>Java Game Loop</li>
-                      <li>Collision Detection</li>
-                      <li>State Management</li>
-                      <li>Event Handling</li>
+                  <div class="tech-detail-box">
+                    <h6>Back-end</h6>
+                    <ul>
+                      <li>Symfony 7.3 (Security, Form, Validator, Mailer)</li>
+                      <li>Doctrine ORM 3.6, DBAL 4, Migrations</li>
+                      <li>Twig 3.x + twig/extra-bundle</li>
+                      <li>PHP 8.2+, Composer, Symfony Flex</li>
                     </ul>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="p-3 border rounded">
-                    <h6 class="fw-bold mb-2"><i class="bi bi-joystick me-2"></i>Gameplay</h6>
-                    <ul class="mb-0" style="padding-left: 20px;">
-                      <li>Combat System</li>
-                      <li>Character Classes</li>
-                      <li>Arena Management</li>
-                      <li>Score Tracking</li>
+                  <div class="tech-detail-box">
+                    <h6>Front-end</h6>
+                    <ul>
+                      <li>CSS custom (variables CSS, responsive mobile)</li>
+                      <li>JavaScript vanilla (validation dates, recherche temps réel)</li>
+                      <li>Menu mobile, auto-dismiss flash messages</li>
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Navigation entre projets -->
-            <div class="project-nav" data-aos="fade-up">
-              <a href="portfolio-classcord.html" class="prev">
-                <i class="bi bi-arrow-left"></i>
-                <span>Projet précédent</span>
-              </a>
-              <a href="portfolio-projets.html" class="btn btn-outline-primary">
-                <i class="bi bi-grid me-2"></i>Tous les projets
-              </a>
-              <a href="portfolio-ent.html" class="next">
-                <span>Projet suivant</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
+            <div class="project-content">
+              <h3>Apprentissages Clés</h3>
 
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Framework Symfony</h5>
+                <p>
+                  Maîtrise de l'écosystème Symfony : bundles, services, sécurité, formulaires,
+                  validation, envoi d'emails et gestion multi-environnements (.env).
+                </p>
+              </div>
+
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>ORM Doctrine</h5>
+                <p>
+                  Conception d'entités avec relations complexes (M2M, 1TM), requêtes DQL personnalisées,
+                  migrations automatiques et fixtures de développement.
+                </p>
+              </div>
+
+              <div class="result-card">
+                <h5><i class="bi bi-check-circle me-2"></i>Sécurité applicative</h5>
+                <p>
+                  Implémentation d'un système de rôles hiérarchique, protection CSRF,
+                  hashage de mots de passe et contrôle d'accès granulaire par route.
+                </p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Navigation entre projets -->
+        <div class="project-nav" data-aos="fade-up">
+          <a href="portfolio-main-stock.html" class="prev">
+            <i class="bi bi-arrow-left"></i>
+            <span>Projet précédent</span>
+          </a>
+          <a href="portfolio-projets.html" class="btn btn-outline-primary">
+            <i class="bi bi-grid me-2"></i>Tous les projets
+          </a>
+          <div></div>
         </div>
       </div>
     </section>
