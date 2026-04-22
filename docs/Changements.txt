@@ -1,0 +1,42 @@
+rajouter RoomBooking
+
+refaire intro
+
+rajouter organigramme
+
+pas RP AP Applications professionnelles
+
+gantt pour projet AP
+
+Description contexte au début
+analyse (existe, non vous avez crée...)
+gantt
+
+propositions (différents langages)
+solution (justifié)
+def fonctionnalités
+
+mise en avant de contraintes de temps (chronologie)
+
+analyse des contraintes
+
+ou est le mcd
+ou sont les diagrammes de classe et de cas
+
+expliquer le déploiement
+
+
+Enlever urban
+
+demander partie serveur 
+diagramme de classe
+
+
+Ent 
+screen en Français
+diagramme de classe
+Conception UX/UI
+MCD
+
+
+Remplir le tableau de synthèse avec des fausses AP en premiere année, ( AP de formation) 

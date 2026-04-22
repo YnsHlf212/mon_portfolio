@@ -219,6 +219,12 @@ ul li, ol li {
   z-index: 997;
 }
 
+.header .container-fluid {
+  max-width: 1400px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .header .logo {
   line-height: 1;
 }
